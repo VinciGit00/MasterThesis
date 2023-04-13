@@ -1,3 +1,24 @@
 
 Metadata_monitoring_network_registry_v_2_0_1.csv
 Agrimonia_Dataset_v_2_0_1.csv
+R/bdn/Plot Differenze/.RData
+R/bdn/newDensity.Rdata
+R/bdn/Plot Differenze/merge_mean.rdata
+R/bdn/Plot su Mappa/top20.rdata
+R/bdn/Plot Differenze/top20.rdata
+R/Bovini/resultBoviniAgrimoniaIt0.csv
+R/Bovini/resultBoviniAgrimoniaMono.csv
+R/Bovini/GeometryBovini.csv
+R/Suini /resultSuiniAgrimoniaMono.csv
+R/we/era5land/Daily Land 2021 Lombardy.Rdata
+R/we/era5land/era5land_fixed_ready_for_IDW.Rdata
+R/we/era5land/prec_daily.Rdata
+R/we/era5land/prec_21_era5land.Rdata
+R/we/era5singlelevel/Daily Single Levels 2021 Lombardy.Rdata
+R/we/era5land/prec_hourly.Rdata
+R/we/era5land/ERA5Land Lombardia 2021.nc
+R/Suini /Suini.shp
+R/bdn/weights_bdn.Rdata
+R/bdn/dataMerge.Rdata
+R/Suini /geometrySuini.csv
+R/Bovini/Bovini.shp
