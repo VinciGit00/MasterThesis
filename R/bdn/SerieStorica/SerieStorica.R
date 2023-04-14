@@ -10,7 +10,7 @@ library(sf)
 setwd("~/R/bdn/SerieStorica")
 source("funzioneSerieStorica.R")
 
-#Loading the 
+#Loading the shapefile
 setwd("~/R/bdn")
 shapename <- read_sf('Com01012021_g_WGS84.shp')
 
@@ -23,10 +23,19 @@ load("top20.rdata")
 
 setwd("~/R/bdn")
 csv <- read.csv("Agrimonia_Dataset_v_2_0_1.csv")
+
+
 coordinates <- unique(csv[,1:3])
-sp_coord <- coordinates
-coordinates <- st_as_sf(coordinates, coords =  c("Longitude", "Latitude"), crs = 4326)
+coordinates(coordinates) <- c("Longitude", "Latitude")
+
+cord_sf <- st_as_sf(coordinates)
+#cord_sf <- st_as_sf(coordinates, coords =  c("Longitude", "Latitude"), crs = 4326)
 save(coordinates, file = "coordinates.Rdata")
+st_buffer <- st_buffer(cord_sf, nQuadSegs = 4,  endCapStyle = 'SQUARE', dist = 0.05)
+
+
+st_buffer_big <- st_buffer(cord_sf, nQuadSegs = 4,  endCapStyle = 'SQUARE', dist = 0.2)
+
 
 setwd("~/R/bdn")
 
@@ -61,6 +70,10 @@ pdf("best_stations_Swine.pdf")
 
 # Create a vector of unique station IDs
 stations <- unique(merge_new$IDStations)
+
+mergeA <- st_transform(mergeA, 4236)
+save(mergeA, file ="mergeA.Rdata")
+st_crs(cord_sf) <- st_crs(mergeA)
 
 # Loop through each station
 for (i in seq_along(stations)) {
@@ -162,17 +175,17 @@ for (i in seq_along(stations)) {
 
 # Close the PDF file
 dev.off()
+
 library(ggplot2)
 library(units)
 
 # Create a PDF file device
 pdf("FinalComparison.pdf")
-
 # Loop through the stations
 for (i in seq_along(stations)) {
-  print(stations[i])
+  #print(stations[i])
 
-  plot_bdn(stations[i])
+  print(plot_bdn(stations[i]))
 }
 
 # Close the PDF file device

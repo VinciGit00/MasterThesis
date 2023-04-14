@@ -111,8 +111,8 @@ dev.off()
 ########################################################################################################################
 #Calcolo delle differenze
 diff <- data.frame(IDStations = merge_mean$IDStations, 
-                   dif_bov = sqrt((merge_mean$avg_bov_old- merge_mean$avg_bov_new)^2), 
-                   dif_sui = sqrt((merge_mean$avg_suini_old- merge_mean$avg_suini_new)^2))
+                   dif_bov = sqrt((merge_mean$avg_bov_old-  as.numeric(merge_mean$avg_bov_new))^2), 
+                   dif_sui = sqrt((merge_mean$avg_suini_old- as.numeric(merge_mean$avg_suini_new))^2))
 
 # Selezionare la variabile di interesse
 # Bovini

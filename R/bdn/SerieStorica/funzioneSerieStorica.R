@@ -1,10 +1,16 @@
+#Library
 library(ggplot2)
 library(sf)
 library(cowplot)
 
+setwd("~/R/bdn/SerieStorica")
+#File che servono alla funzione ma che non variano (tipo MergeA) -> servono 2/3 load prima della funzione
+load("mergeA.rdata")
+
 plot_bdn <- function(IDStations){
+ 
   setwd("~/R/bdn/SerieStorica")
-  load ("coordinates.Rdata")
+  load("st_buffer.Rdata")
   
   station_data <- merge_new[merge_new$IDStations == IDStations, ]
   station_data <- station_data[order(station_data$Time), ]
@@ -18,44 +24,42 @@ plot_bdn <- function(IDStations){
   station_data2$Time <- as.POSIXct(station_data2$Time)
   
   tspigs <- ggplot() +
-    geom_line(data = station_data, aes(x = Time, y = LI_pigs, color = "New")) +
-    geom_line(data = station_data2, aes(x = Time, y = LI_pigs, color = "Old")) +
+    geom_line(data = station_data, aes(x = Time, y = as.numeric(LI_pigs), color = "New")) +
+    geom_line(data = station_data2, aes(x = Time, y = as.numeric(LI_pigs), color = "Old")) +
     labs(title = paste("Station ID", IDStations),
          x = "Time",
-         y = "Density swines",
-         color = "Data type")
+         color = "Data type")+
+    scale_y_continuous(name = "n/km2")
   
   tsbov <- ggplot() +
-    geom_line(data = station_data, aes(x = Time, y = LI_bovine, color = "New")) +
-    geom_line(data = station_data2, aes(x = Time, y = LI_bovine, color = "Old")) +
+    geom_line(data = station_data, aes(x = Time, y = as.numeric(LI_bovine), color = "New")) +
+    geom_line(data = station_data2, aes(x = Time, y = as.numeric(LI_bovine), color = "Old")) +
     labs(title = paste("Station ID", IDStations),
          x = "Time",
-         y = "Density bovines",
-         color = "Data type")
+         color = "Data type")+
+    scale_y_continuous(name = "n/km2")
   
-  mergeA <- st_transform(mergeA, st_crs(coordinates))
   
-  st_buffer <- st_buffer(coordinates[coordinates$IDStations==IDStations, ], nQuadSegs = 4,  endCapStyle = 'SQUARE', dist = 0.05)
-  st_buffer <- st_as_sf(st_buffer, coords =  c("Longitude", "Latitude"), crs = 4326)
-
+  square <- st_buffer[st_buffer$IDStations==IDStations,]
+  st_crs(square) <- st_crs(mergeA)
   
   mapPigs <- ggplot(mergeA) +
     geom_sf(aes(fill = DensitySwines)) +
     scale_fill_continuous(type = "viridis")+
-    geom_sf(data = coordinates[coordinates$IDStations==IDStations, ], col= "red")+
-    geom_sf(data = st_buffer[st_buffer$IDStations==IDStations], col = "red")+
-    coord_sf(xlim = c(sp_coord$Longitude[sp_coord$IDStations==IDStations]-0.3, sp_coord$Longitude[sp_coord$IDStations==IDStations]+0.3), 
-                    ylim = c(sp_coord$Latitude[sp_coord$IDStations==IDStations]-0.3, sp_coord$Latitude[sp_coord$IDStations==IDStations]+0.3)
-                    )
-   
-    
+    geom_sf(data = cord_sf[cord_sf$IDStations==IDStations, ], col= "red")+
+    geom_sf(data = square, col = "red", fill = NA)+
+    coord_sf(xlim = c(st_coordinates(cord_sf[cord_sf$IDStations==IDStations, ])[1]-0.3, st_coordinates(cord_sf[cord_sf$IDStations==IDStations, ])[1]+0.3), 
+             ylim = c(st_coordinates(cord_sf[cord_sf$IDStations==IDStations, ])[2]-0.3, st_coordinates(cord_sf[cord_sf$IDStations==IDStations, ])[2]+0.3)
+    )
    
   mapBovine <- ggplot(mergeA) +
     geom_sf(aes(fill = DensityBovine)) +
     scale_fill_continuous(type = "viridis")+
-    geom_sf(data = coordinates[coordinates$IDStations==IDStations, ], col= "red")+
-    coord_sf(xlim = c(sp_coord$Longitude[sp_coord$IDStations==IDStations]-0.3, sp_coord$Longitude[sp_coord$IDStations==IDStations]+0.3), 
-             ylim = c(sp_coord$Latitude[sp_coord$IDStations==IDStations]-0.3, sp_coord$Latitude[sp_coord$IDStations==IDStations]+0.3)
+    geom_sf(data = cord_sf[cord_sf$IDStations==IDStations, ], col= "red")+
+    geom_sf(data = square, col = "red", fill = NA)+
+    coord_sf(xlim = c(st_coordinates(cord_sf[cord_sf$IDStations==IDStations, ])[1]-0.3, st_coordinates(cord_sf[cord_sf$IDStations==IDStations, ])[1]+0.3), 
+             ylim = c(st_coordinates(cord_sf[cord_sf$IDStations==IDStations, ])[2]-0.3, st_coordinates(cord_sf[cord_sf$IDStations==IDStations, ])[2]+0.3)
     )
+  
   plot_grid(tspigs, mapPigs, tsbov, mapBovine, nrow = 2)
 } 
