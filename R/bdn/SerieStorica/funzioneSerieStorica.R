@@ -3,7 +3,7 @@ library(ggplot2)
 library(sf)
 library(cowplot)
 
-setwd("~/R/bdn/SerieStorica")
+setwd("~/R/bdn/PlotTool")
 #File che servono alla funzione ma che non variano (tipo MergeA) -> servono 2/3 load prima della funzione
 load("mergeA.rdata")
 

@@ -60,7 +60,9 @@ merge_new <- result
 merge_new <- merge_new[, c("IDStations", "Date", "wdSuini", "wdBovini")]
 
 merge_new <- rename(merge_new, Time = Date, LI_pigs = wdSuini, LI_bovine = wdBovini)
-
+setwd("~/R/bdn/PlotTool")
+save(merge_new, file= "Merge_new.rdata")
+save(select_util_old, file="old_utils.rdata")
 #Merge
 
 load("dataMerge.rdata")
@@ -78,12 +80,14 @@ mergeA <- st_transform(mergeA, 4236)
 save(mergeA, file ="mergeA.Rdata")
 st_crs(cord_sf) <- st_crs(mergeA)
 
-
+setwd("~/R/bdn/PlotTool")
+save(cord_sf, file= "cord_sf.rdata")
 library(ggplot2)
 library(units)
 
 # Create a PDF file device
-pdf("PrintAllStation.pdf")
+pdf("FinalComparison.pdf", width = 11, height = 8.5,  compress = 9)
+
 # Loop through the stations
 for (i in seq_along(stations)) {
   #print(stations[i])

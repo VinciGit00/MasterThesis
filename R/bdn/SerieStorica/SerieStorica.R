@@ -180,7 +180,7 @@ library(ggplot2)
 library(units)
 
 # Create a PDF file device
-pdf("FinalComparison.pdf")
+pdf("FinalComparison.pdf", width = 11, height = 8.5)
 # Loop through the stations
 for (i in seq_along(stations)) {
   #print(stations[i])
