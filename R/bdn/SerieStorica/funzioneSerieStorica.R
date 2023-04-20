@@ -6,12 +6,16 @@ library(cowplot)
 setwd("~/R/bdn/PlotTool")
 #File che servono alla funzione ma che non variano (tipo MergeA) -> servono 2/3 load prima della funzione
 load("mergeA.rdata")
+info <- read.csv("Metadata_monitoring_network_registry_v_2_0_1.csv")
 
 plot_bdn <- function(IDStations){
  
   setwd("~/R/bdn/SerieStorica")
   load("st_buffer.Rdata")
+  #Info about the dataset 
+  info_data <- unique(info[c("IDStation", "NameStation", "NUTS3_Name")][info$IDStation == IDStations,])
   
+  #Select info
   station_data <- merge_new[merge_new$IDStations == IDStations, ]
   station_data <- station_data[order(station_data$Time), ]
   
@@ -26,7 +30,7 @@ plot_bdn <- function(IDStations){
   tspigs <- ggplot() +
     geom_line(data = station_data, aes(x = Time, y = as.numeric(LI_pigs), color = "New")) +
     geom_line(data = station_data2, aes(x = Time, y = as.numeric(LI_pigs), color = "Old")) +
-    labs(title = paste("Station ID", IDStations),
+    labs(title = paste("Station ID", IDStations, "-", info_data$NameStation, "-", info_data$NUTS3_Name),
          x = "Time",
          color = "Data type")+
     scale_y_continuous(name = "n/km2")
@@ -34,7 +38,7 @@ plot_bdn <- function(IDStations){
   tsbov <- ggplot() +
     geom_line(data = station_data, aes(x = Time, y = as.numeric(LI_bovine), color = "New")) +
     geom_line(data = station_data2, aes(x = Time, y = as.numeric(LI_bovine), color = "Old")) +
-    labs(title = paste("Station ID", IDStations),
+    labs(title = paste("Station ID", IDStations, "-", info_data$NameStation, "-", info_data$NUTS3_Name),
          x = "Time",
          color = "Data type")+
     scale_y_continuous(name = "n/km2")

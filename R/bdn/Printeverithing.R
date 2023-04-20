@@ -64,7 +64,7 @@ setwd("~/R/bdn/PlotTool")
 save(merge_new, file= "Merge_new.rdata")
 save(select_util_old, file="old_utils.rdata")
 #Merge
-
+setwd("~/R/bdn")
 load("dataMerge.rdata")
 dataMerge <- dataMerge[dataMerge$Date == "2020-12-31",]
 mergeA <- merge(my_shapefile, dataMerge, by= "PRO_COM" )
@@ -85,16 +85,19 @@ save(cord_sf, file= "cord_sf.rdata")
 library(ggplot2)
 library(units)
 
-# Create a PDF file device
-pdf("FinalComparison.pdf", width = 11, height = 8.5,  compress = 9)
-
+setwd("~/R/bdn/PlotTool")
+info <- read.csv("Metadata_monitoring_network_registry_v_2_0_1.csv")
+info$NameStation <- gsub("/", "_",info$NameStation)
+setwd("~/R/bdn/SerieStorica/AllPdf")
 # Loop through the stations
 for (i in seq_along(stations)) {
-  #print(stations[i])
+  # Create a PDF file device for each station
+  info_data <- unique(info[c("IDStation", "NameStation", "NUTS3_Name")][info$IDStation == stations[i],])
+  file_name <- paste0(stations[i], "_", info_data$NameStation, "_", info_data$NUTS3_Name, ".pdf")
+  
+  pdf(paste0(file_name, ".pdf"), width = 11, height = 8.5,  compress = 9)
   
   print(plot_bdn(stations[i]))
+  # Close the PDF file device for each station
+  dev.off()
 }
-
-# Close the PDF file device
-dev.off()
-
