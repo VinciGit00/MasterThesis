@@ -104,6 +104,6 @@ ggplot() +
   geom_sf(data = provinces,color = "black",fill = NA) +
   geom_sf(data = buf, fill = NA, color = "black", size = 20) +
   scale_fill_continuous(type="viridis",name="Livestock (Number km^(-2))")+
-  ggtitle("Mean of daily livestock mean of 2020")
+  ggtitle("Mean of daily livestock of 2020")
 dev.off()
 

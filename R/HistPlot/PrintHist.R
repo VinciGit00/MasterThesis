@@ -14,7 +14,7 @@ ggplot() +
   geom_density(data = agrimonia_v2.2, aes(x = as.numeric(WE_temp_2m), fill = "agrimonia_v2.2"), 
                color = "black", alpha = 0.35, position = "identity", bw = 5) + 
   geom_hline(yintercept = 0, color = "black") +
-  labs(title = "Histogram of WE_temp_2m", 
+  labs(title = "Relative frequency distribution of temperature", 
        x = "Temperature (°C)", y = "Frequency") + 
   scale_x_continuous(limits = c(-40, 40)) +
   scale_fill_manual(values = c("AGC_Dataset" = alpha("blue", 0.5), "agrimonia_v2.2" = alpha("yellow", 0.5)), 
@@ -32,7 +32,7 @@ ggplot() +
                color = "black", alpha = 0.35, position = "identity") + 
    
   geom_hline(yintercept = 0, color = "black") +
-  labs(title = "Relativity frequency distribution of WE_tot_precipitation", 
+  labs(title = "Relative frequency distribution of WE_tot_precipitation", 
        x = "Precipitation (m)", y = "Frequency") + 
   scale_x_continuous(limits = c(0, 0.02), trans="sqrt") +
   scale_fill_manual(values = c("AGC_Dataset" = alpha("blue", 0.5), "Agrimonia dataset" = alpha("yellow", 0.5)), 
@@ -51,7 +51,7 @@ ggplot() +
   geom_density(data = AGC, aes(x = as.numeric(WE_rh_mean), fill = "AGC"), 
                color = "black", alpha = 0.35, position = "identity") + 
   geom_hline(yintercept = 0, color = "black") +
-  labs(title = "Relativity frequency distribution of WE_rh_mean", 
+  labs(title = "Relative frequency distribution of WE_rh_mean", 
        x = "Mean rh", y = "Frequency") + 
   scale_fill_manual(values = c("Agrimonia dataset" = "blue", "AGC" = "yellow"), 
                     name = "Density",
@@ -69,7 +69,7 @@ ggplot() +
                color = "black", alpha = 0.35, position = "identity") + 
   
   geom_hline(yintercept = 0, color = "black") +
-  labs(title = "Relativity frequency distribution of WE_tot_precipitation", 
+  labs(title = "Relative frequency distribution of WE_tot_precipitation", 
        x = "Precipitation  (m)", y = "Frequenza") + 
   scale_x_continuous(limits = c(0, 0.02)) +
   scale_fill_manual(values = c("Agrimonia dataset" = alpha("blue", 0.5), "AGC_Dataset" = alpha("yellow", 0.5)), 
@@ -85,7 +85,7 @@ ggplot() +
   geom_density(data = agrimonia_v2.2, aes(x = as.numeric(WE_blh_layer_max), fill = "Agrimonia dataset"), 
                color = "black", alpha = 0.35, position = "identity") + 
   geom_hline(yintercept = 0, color = "black") +
-  labs(title = "Relativity frequency distribution of WE_blh_layer_max", 
+  labs(title = "Relative frequency distribution of WE_blh_layer_max", 
        x = "WE_blh_layer_max (m)", y = "Frequency") + 
   scale_fill_manual(values = c("Agrimonia dataset" = "yellow", "AGC_Dataset" = "blue"), 
                     name = "Density") +
@@ -105,7 +105,7 @@ ggplot() +
                color = "black", alpha = 0.35, position = "identity") + 
   
   geom_hline(yintercept = 0, color = "black") +
-  labs(title = "Relativity frequency distribution of NH3", 
+  labs(title = "Relative frequency distribution of NH3", 
        x = "NH3", y = "Frequency") + 
   scale_fill_manual(values = c("AGC_Dataset" = "blue", "Agrimonia Dataset" = "yellow"), 
                     name = "Density") +
@@ -124,7 +124,7 @@ ggplot() +
   geom_density(data = agrimonia_v2.2, aes(x = as.numeric(LI_pigs), fill = "Agrimonia Dataset"), 
                color = "black", alpha = 0.35, position = "identity") + 
   geom_hline(yintercept = 0, color = "black") +
-  labs(title = "Relativity frequency distribution of LI_pigs", 
+  labs(title = "Relative frequency distribution of LI_pigs", 
        x = "LI_pigs (Number km^(-2))", y = "Frequency") + 
   scale_fill_manual(values = c("Agrimonia Dataset" = "yellow", "AGC_Dataset" = "blue"), 
                     name = "Density") +
