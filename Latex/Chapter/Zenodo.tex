@@ -1,0 +1,58 @@
+
+\section{Zenodo's dataset}
+The scripts used in the last thesis were taken and applied to the new Zenodo 2.0 dataset (\href{https://zenodo.org/record/7563265#.ZAm2_y0QP5g}{Link}) to get an idea of the goodness and efficiency of the previously used models.
+\\The programming language used is mostly python and the main libraries used are: pandas, numpy, tensor flow and sk learn.
+\\The models created are as follows:
+\begin{itemize}
+    \item Linear regression
+    \item Regression with neural networs
+    \item Recurrent neural network (RNN)
+    \item Long short-term memory networks (LSTM networks)
+    \item Convolutional neural network (CNN)
+\end{itemize}
+The estimator that were considered are mae (mean absolute error) and mse (mean squared error). The results are as follows:
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+    \hline
+        Tipe of regression & r2 & mae \\ \hline
+        Linear regression & 0.46 & 10.76 \\ \hline
+        Regression with neural networks & 0.70 & 146.72 \\ \hline
+        RNN & 0.0067 & 15.95 \\ \hline
+        LSTM networks & -7.15 & 8.79 \\ \hline
+        CNN & -1324.27 & 397572.56 \\ \hline
+  
+    \end{tabular}
+\end{table}
+\\\underline{Note:} The station considered at this stage is the station Bertonico Via Moro (station id: 1266).
+
+\subsection{Creating a subset for the dataset}
+From here until the end of this thesis, only stations measuring the variable '$AQ\textunderscore\text{nh}{3}$' (i.e., stations measuring ammonia) were selected and used, totaling 10. Next, the station with the parameter 'IDStations' equal to 1266 was used. 
+Note: For all types of regression, all variables in the dataset were used as regressors, except: 'IDStations', 'Latitude', 'Longitude', 'Time', 'Altitude' and '$AQ\textunderscore\text{PM}{25}$'.
+\\The response variable is PM10. It represents the particulate matter with a diameter of 10 micrometers or less. It is a type of air pollutant consisting of solid particles and liquid droplets suspended in the air. These particles can originate from various sources, including dust, smoke, pollen, and emissions from vehicles, industrial processes, and construction activities.
+
+\subsection{Linear regression}
+Classical regression was used, furthermore both x and y were divided into train set and test set with a 70-30 split (70$\%$ train and 30$\%$ test).
+\subsection{Neural network design}
+For this type of regression the neural network model is as follows:
+\\As you can see from the image there are 4 layers of 32 neurons each. The activation function is the relu. The number of epochs is 100.
+\\\includegraphics[scale = 0.75]{Images/NnStructure.png}
+\subsection{Recurrent neural network (RNN)}
+To improve performance, the data was first normalized before being used within the model.
+\\The number of epochs is 100.
+
+\subsection{Long short term memory networks (LSTM)}
+Both x's and y's were split into train sets and test sets with a 70-30 split (70\% train and 30\% test).
+The model consists of the following layers:
+\\An LSTM layer with 50 neurons, a ReLU activation function, and an input shape of (1, X\_train.shape[2]). This means that the model expects input sequences of length 1, with X\_train.shape[2] functionality in each time step. The LSTM level can learn to extract useful functions from the input sequence and acquire time dependencies.
+\\A dense output layer with a single neuron and no activation function (meaning it will produce a continuous value).
+\\The Adam optimizer was used. The number of epochs is 100.
+
+\subsection{Convolutional neural networks (CNN)}
+As for convolutional networks there is a 1D convolutional layer with 64 filters, a kernel size of 3, and a ReLU activation function. This layer takes a shape input (X.shape[1], 1).
+Another 1D convolutional layer with 64 filters, a kernel size of 3, and a ReLU activation function.
+A maximum pooling layer with a pool size of 2.
+\\A flattened layer, which converts the previous layer's 2D output into a 1D vector.
+A dense layer with 50 neurons and a ReLU activation function.
+\\A dense output layer with a single neuron and no activation function (meaning it will produce a continuous value).
+\\The number of epochs is 50.
