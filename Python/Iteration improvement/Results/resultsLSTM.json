@@ -1,416 +1,2477 @@
 [
     {
-        "R2": 0.31427249528372114,
-        "MAE": 0.08232492774710624,
-        "RMSE": 0.11512290716207962,
-        "Hidden Units": 128,
+        "R2": -0.008004169039662834,
+        "MAE": 0.10548011732823923,
+        "RMSE": 0.1395780503035873,
+        "Hidden Units": 256,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 10
     },
     {
-        "R2": -0.20366929112948595,
-        "MAE": 0.10707377667837617,
-        "RMSE": 0.1525244802501012,
-        "Hidden Units": 256,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 10
-    },
-    {
-        "R2": -0.0320250321833877,
-        "MAE": 0.10455430125949361,
-        "RMSE": 0.14123133981083477,
+        "R2": -0.08659381268904975,
+        "MAE": 0.10456096598481607,
+        "RMSE": 0.14491708088019187,
         "Hidden Units": 64,
         "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 10
     },
     {
-        "R2": -9.087250344125321,
-        "MAE": 0.4305918599246406,
-        "RMSE": 0.44154234827000377,
-        "Hidden Units": 128,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 10
-    },
-    {
-        "R2": -6.496137943283666,
-        "MAE": 0.3663637355443031,
-        "RMSE": 0.38063151918488414,
-        "Hidden Units": 128,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 10
-    },
-    {
-        "R2": 0.21437956230020616,
-        "MAE": 0.099469435708118,
-        "RMSE": 0.12322316228000191,
+        "R2": 0.3125794386032016,
+        "MAE": 0.08427381413366546,
+        "RMSE": 0.11526493839633034,
         "Hidden Units": 64,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 10
-    },
-    {
-        "R2": -19.077630294263727,
-        "MAE": 0.6136392056511938,
-        "RMSE": 0.6229342214713325,
-        "Hidden Units": 128,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 10
     },
     {
-        "R2": -11.906468726145564,
-        "MAE": 0.4886483355595974,
-        "RMSE": 0.4994473120023258,
-        "Hidden Units": 256,
-        "Learning Rate": 0.001,
+        "R2": -0.022948726004628606,
+        "MAE": 0.10476919754931079,
+        "RMSE": 0.1406089277174886,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 10
     },
     {
-        "R2": -7.105930580953487,
-        "MAE": 0.38194223872854943,
-        "RMSE": 0.3958105843674495,
+        "R2": -0.5104720227153321,
+        "MAE": 0.14036085154501043,
+        "RMSE": 0.17086074914846722,
         "Hidden Units": 64,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 10
     },
     {
-        "R2": 0.4730462501775303,
-        "MAE": 0.06913067452777974,
-        "RMSE": 0.1009188314383957,
+        "R2": -0.02534573554821984,
+        "MAE": 0.10470883642870285,
+        "RMSE": 0.14077357122430448,
         "Hidden Units": 64,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 10
     },
     {
-        "R2": -0.05520207170971636,
-        "MAE": 0.10438627110701908,
-        "RMSE": 0.14280840907672368,
-        "Hidden Units": 128,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": -0.0038645769014713505,
-        "MAE": 0.10613218904573683,
-        "RMSE": 0.13929115137466327,
-        "Hidden Units": 64,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": -8.749005536857512,
-        "MAE": 0.41104899774726167,
-        "RMSE": 0.43407634734964845,
+        "R2": -5.266832140969888,
+        "MAE": 0.33334837831868586,
+        "RMSE": 0.34802464127660304,
         "Hidden Units": 256,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
-        "Number of Iterations": 20
+        "Number of Iterations": 10
     },
     {
-        "R2": -0.08814507968019436,
-        "MAE": 0.10458149643056724,
-        "RMSE": 0.14502048884337204,
+        "R2": -4.017752368627352,
+        "MAE": 0.3001902875646827,
+        "RMSE": 0.3114157516458979,
         "Hidden Units": 128,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": 0.46058091953185254,
-        "MAE": 0.07101345284447297,
-        "RMSE": 0.1021054951206218,
-        "Hidden Units": 256,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": -0.2983300845481738,
-        "MAE": 0.12546767162279138,
-        "RMSE": 0.1584085153687059,
-        "Hidden Units": 64,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
-        "Number of Iterations": 20
+        "Number of Iterations": 10
     },
     {
-        "R2": -0.46264653026078295,
-        "MAE": 0.13946019414634925,
-        "RMSE": 0.1681340429134442,
+        "R2": -0.001338222644335696,
+        "MAE": 0.10663140496707642,
+        "RMSE": 0.1391157689176936,
         "Hidden Units": 128,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": -0.17544490262205725,
-        "MAE": 0.10625493191021346,
-        "RMSE": 0.15072562795804625,
-        "Hidden Units": 64,
         "Learning Rate": 0.1,
         "Number of Epochs": 200,
-        "Number of Iterations": 20
+        "Number of Iterations": 10
     },
     {
-        "R2": -11.446467129044459,
-        "MAE": 0.4796967275284801,
-        "RMSE": 0.49046611857559214,
-        "Hidden Units": 256,
-        "Learning Rate": 0.001,
+        "R2": -0.009627971448759709,
+        "MAE": 0.1054900631760106,
+        "RMSE": 0.1396904287925774,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
         "Number of Epochs": 200,
-        "Number of Iterations": 20
+        "Number of Iterations": 10
     },
     {
-        "R2": -0.0964614717841179,
-        "MAE": 0.10468860494511356,
-        "RMSE": 0.14557360977520015,
+        "R2": -0.08349523819343552,
+        "MAE": 0.10452433333281089,
+        "RMSE": 0.1447103076842975,
         "Hidden Units": 128,
         "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 20
     },
     {
-        "R2": 0.3775502885284642,
-        "MAE": 0.08149264382306863,
-        "RMSE": 0.10968269133756041,
-        "Hidden Units": 64,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": -0.005037000551640025,
-        "MAE": 0.10596789580919012,
-        "RMSE": 0.13937246741537873,
-        "Hidden Units": 64,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": -1.8671364381593194,
-        "MAE": 0.21487997755042745,
-        "RMSE": 0.2354019973850242,
-        "Hidden Units": 256,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": 0.2556446586189072,
-        "MAE": 0.08741401300773188,
-        "RMSE": 0.11994333440886368,
-        "Hidden Units": 256,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": 0.20194323754264654,
-        "MAE": 0.0892645989443001,
-        "RMSE": 0.12419464042688935,
-        "Hidden Units": 64,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20
-    },
-    {
-        "R2": -3.247817479847672,
-        "MAE": 0.274522939214,
-        "RMSE": 0.2865292000414458,
+        "R2": -0.13419003663456452,
+        "MAE": 0.13328972144904422,
+        "RMSE": 0.14805697685417257,
         "Hidden Units": 128,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 20
     },
     {
-        "R2": -0.08730975665356255,
-        "MAE": 0.10457046389465095,
-        "RMSE": 0.14496481510410267,
+        "R2": 0.420075416761611,
+        "MAE": 0.08115886538833769,
+        "RMSE": 0.10586970987787103,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.08542677559006706,
+        "MAE": 0.10481212474136987,
+        "RMSE": 0.14483923714357413,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -1.1727979958739998,
+        "MAE": 0.18183595990166765,
+        "RMSE": 0.2049253282601831,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.2636150156668803,
+        "MAE": 0.08559494954769055,
+        "RMSE": 0.11929944561992642,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.17949315643076802,
+        "MAE": 0.106361925859988,
+        "RMSE": 0.15098495578142726,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.07211315580109656,
+        "MAE": 0.1044628970063381,
+        "RMSE": 0.14394821240550237,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.35029070884303937,
+        "MAE": 0.0786229102097778,
+        "RMSE": 0.11205867994042884,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.4474991834759584,
+        "MAE": 0.07666346919599666,
+        "RMSE": 0.10333618534337304,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -5.850968072533577,
+        "MAE": 0.3496162571324759,
+        "RMSE": 0.36388314131918664,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.24502723163111217,
+        "MAE": 0.10845916327976045,
+        "RMSE": 0.1551227119385189,
         "Hidden Units": 128,
         "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 20
     },
     {
-        "R2": -0.008484805755030855,
-        "MAE": 0.10558047645535822,
-        "RMSE": 0.13961132315233746,
+        "R2": -0.07104021872292243,
+        "MAE": 0.10445686300366246,
+        "RMSE": 0.1438761649567534,
         "Hidden Units": 256,
         "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 20
     },
     {
-        "R2": 0.5073807606021905,
-        "MAE": 0.07102947551336011,
-        "RMSE": 0.09757569382997218,
+        "R2": -4.282156909523188,
+        "MAE": 0.307467536951499,
+        "RMSE": 0.31951526560074966,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.12958450624771722,
+        "MAE": 0.10519571458278454,
+        "RMSE": 0.14775606849225867,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -4.888920039137605,
+        "MAE": 0.3218944994101105,
+        "RMSE": 0.33736792666398485,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.6526710453821263,
+        "MAE": 0.1537335971034364,
+        "RMSE": 0.17872247605398683,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.48247522975949386,
+        "MAE": 0.06580869851346312,
+        "RMSE": 0.100011866854517,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.47825998871226005,
+        "MAE": 0.07096350408047654,
+        "RMSE": 0.100418339354147,
         "Hidden Units": 128,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 20
     },
     {
-        "R2": -17.637837102648625,
-        "MAE": 0.5906600800126489,
-        "RMSE": 0.600183040394562,
+        "R2": -0.3146469038670652,
+        "MAE": 0.14493483218967831,
+        "RMSE": 0.15940081034910514,
         "Hidden Units": 256,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 20
     },
     {
-        "R2": -0.1309870391050274,
-        "MAE": 0.10522260750182953,
-        "RMSE": 0.14784776966767973,
-        "Hidden Units": 64,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30
-    },
-    {
-        "R2": -0.2406876803708633,
-        "MAE": 0.10828692456344505,
-        "RMSE": 0.15485213530130454,
-        "Hidden Units": 256,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30
-    },
-    {
-        "R2": -0.004844558402784749,
-        "MAE": 0.105993436270462,
-        "RMSE": 0.13935912341852033,
-        "Hidden Units": 64,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30
-    },
-    {
-        "R2": -0.14763117312623786,
-        "MAE": 0.10553137904293783,
-        "RMSE": 0.14893169479513643,
-        "Hidden Units": 256,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30
-    },
-    {
-        "R2": -3.0230001556198935,
-        "MAE": 0.26125792511248314,
-        "RMSE": 0.2788437971558048,
-        "Hidden Units": 128,
-        "Learning Rate": 0.01,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30
-    },
-    {
-        "R2": 0.06680773174726129,
-        "MAE": 0.11045070380302165,
-        "RMSE": 0.1342986136046455,
+        "R2": 0.4828056201865576,
+        "MAE": 0.06720614818495059,
+        "RMSE": 0.09997993771731949,
         "Hidden Units": 64,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 30
     },
     {
-        "R2": -0.2600011893066603,
-        "MAE": 0.10904206961264341,
-        "RMSE": 0.15605275525857412,
-        "Hidden Units": 64,
-        "Learning Rate": 0.1,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30
-    },
-    {
-        "R2": -0.15730623853357484,
-        "MAE": 0.1057596326003343,
-        "RMSE": 0.14955815900305516,
+        "R2": -0.04015848799465571,
+        "MAE": 0.10444866052724355,
+        "RMSE": 0.1417867742518669,
         "Hidden Units": 256,
         "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 30
     },
     {
-        "R2": -0.49543435096478516,
-        "MAE": 0.1400450327867725,
-        "RMSE": 0.17000811013538922,
+        "R2": 0.5483749557482203,
+        "MAE": 0.06526313654042713,
+        "RMSE": 0.09342755252267393,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -2.3784813365977704,
+        "MAE": 0.24402478563779822,
+        "RMSE": 0.25553284220441613,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -5.5521161023262735,
+        "MAE": 0.3428746815080996,
+        "RMSE": 0.3558580180692515,
         "Hidden Units": 64,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 30
     },
     {
-        "R2": -0.03993438439884511,
-        "MAE": 0.10444967148394585,
-        "RMSE": 0.14177149935001904,
-        "Hidden Units": 128,
-        "Learning Rate": 0.01,
+        "R2": -0.08091723542660212,
+        "MAE": 0.10451080456211227,
+        "RMSE": 0.14453804769826442,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 30
     },
     {
-        "R2": 0.4351008049558399,
-        "MAE": 0.0712216466650933,
-        "RMSE": 0.1044892089655088,
+        "R2": -4.269516287604015,
+        "MAE": 0.3024073723289702,
+        "RMSE": 0.31913272386921804,
         "Hidden Units": 256,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 30
     },
     {
-        "R2": -10.128180997468078,
-        "MAE": 0.452696771868256,
-        "RMSE": 0.463765089851819,
-        "Hidden Units": 128,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30
-    },
-    {
-        "R2": -12.775435893352322,
-        "MAE": 0.5029010248476637,
-        "RMSE": 0.515986855622175,
+        "R2": -0.09221696723289252,
+        "MAE": 0.10463454250018722,
+        "RMSE": 0.1452915720562627,
         "Hidden Units": 128,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 30
     },
     {
-        "R2": 0.3717380281096375,
-        "MAE": 0.08049075011954163,
-        "RMSE": 0.11019359450980516,
-        "Hidden Units": 64,
-        "Learning Rate": 0.01,
+        "R2": -0.1187432505568271,
+        "MAE": 0.10498272551258579,
+        "RMSE": 0.14704531008718952,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 30
     },
     {
-        "R2": -0.10447838490388883,
-        "MAE": 0.10478756568533922,
-        "RMSE": 0.14610483021301698,
+        "R2": -0.017649938750776695,
+        "MAE": 0.10496751138400208,
+        "RMSE": 0.1402442837648264,
         "Hidden Units": 64,
         "Learning Rate": 0.1,
         "Number of Epochs": 200,
         "Number of Iterations": 30
     },
     {
-        "R2": -12.475698551377313,
-        "MAE": 0.5002443151384549,
-        "RMSE": 0.5103423476332652,
+        "R2": -0.32485223248596196,
+        "MAE": 0.14006617886765527,
+        "RMSE": 0.16001831183770943,
         "Hidden Units": 128,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 30
+    },
+    {
+        "R2": -3.9813530693115835,
+        "MAE": 0.29981326057740043,
+        "RMSE": 0.3102841745858928,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.31782274643545727,
+        "MAE": 0.11143790357470683,
+        "RMSE": 0.15959322951324573,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.004301550951717914,
+        "MAE": 0.1060683738875699,
+        "RMSE": 0.13932146422648403,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.16134423651311858,
+        "MAE": 0.10587226886511882,
+        "RMSE": 0.14981884612935367,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.41533588245909636,
+        "MAE": 0.08286125314685806,
+        "RMSE": 0.1063014488462825,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.13861554257114794,
+        "MAE": 0.10536642364007227,
+        "RMSE": 0.14834554803440142,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.31208887948712727,
+        "MAE": 0.11117657300885793,
+        "RMSE": 0.15924565473263996,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.26662781315842987,
+        "MAE": 0.10929466235689271,
+        "RMSE": 0.1564625750423812,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -16.55221668099723,
+        "MAE": 0.5729199889859165,
+        "RMSE": 0.582441013922473,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.8830891142599939,
+        "MAE": 0.1622020337460074,
+        "RMSE": 0.19077497259142429,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.304620743484296,
+        "MAE": 0.11083257357451477,
+        "RMSE": 0.1587918115037888,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -3.8669810608495085,
+        "MAE": 0.289453894243956,
+        "RMSE": 0.3067014234038428,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -2.823687160217102,
+        "MAE": 0.2540651359508005,
+        "RMSE": 0.2718486244243391,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.8414699451103598,
+        "MAE": 0.1576718601284834,
+        "RMSE": 0.1886549830527193,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -2.1555545116419714,
+        "MAE": 0.23405900558868015,
+        "RMSE": 0.24695840234682453,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.1446024201949998,
+        "MAE": 0.10547653980241367,
+        "RMSE": 0.1487350395784969,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.4617941461904702,
+        "MAE": 0.07182425911349712,
+        "RMSE": 0.10199060593176604,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.004494068906225612,
+        "MAE": 0.1060412916399184,
+        "RMSE": 0.13933481708749243,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.3255142717141386,
+        "MAE": 0.14289114519975235,
+        "RMSE": 0.16005828805762498,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -9.291142284061774,
+        "MAE": 0.4344379206451428,
+        "RMSE": 0.44598243542983274,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.012026620160699109,
+        "MAE": 0.1053163791760738,
+        "RMSE": 0.13985626685418445,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -5.870279384700015,
+        "MAE": 0.3528962217597448,
+        "RMSE": 0.3643956321020402,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.5341677667750977,
+        "MAE": 0.07017638942494654,
+        "RMSE": 0.09488569249918334,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.29210635614467684,
+        "MAE": 0.11024653864285301,
+        "RMSE": 0.1580283824844912,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -1.9118164501882218,
+        "MAE": 0.21405582699768813,
+        "RMSE": 0.23722909989868096,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -1.0919331079417227,
+        "MAE": 0.18760650292103428,
+        "RMSE": 0.20107582538585717,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.2364418816022471,
+        "MAE": 0.09696382731414292,
+        "RMSE": 0.12148062369313484,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.455262132264873,
+        "MAE": 0.07056170393062819,
+        "RMSE": 0.10260765130287103,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.2874668784277341,
+        "MAE": 0.11006918730157794,
+        "RMSE": 0.1577444165110363,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -7.910010364897802,
+        "MAE": 0.4015895799985008,
+        "RMSE": 0.4149779950182063,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.27517266867907964,
+        "MAE": 0.10961578496090778,
+        "RMSE": 0.15698944759445457,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.00380759132788544,
+        "MAE": 0.10614077185655572,
+        "RMSE": 0.13928719780413742,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.45496000517236956,
+        "MAE": 0.06940587393190495,
+        "RMSE": 0.10263610191732038,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.9814431256908438,
+        "MAE": 0.1825921322474863,
+        "RMSE": 0.19569366593469031,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.004301227584228684,
+        "MAE": 0.1060684198811973,
+        "RMSE": 0.13932144179694797,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.6558430236690418,
+        "MAE": 0.15231640321014872,
+        "RMSE": 0.17889390522633677,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.06435923930711196,
+        "MAE": 0.10441821803548924,
+        "RMSE": 0.14342672459999253,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.24099866270639025,
+        "MAE": 0.10829931897518438,
+        "RMSE": 0.15487154117685484,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -5.391164560222535,
+        "MAE": 0.33926952140385164,
+        "RMSE": 0.35146004750363136,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.2180634255219689,
+        "MAE": 0.10755490324226581,
+        "RMSE": 0.1534337554209887,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.09582343291475914,
+        "MAE": 0.10468055528623088,
+        "RMSE": 0.14553124844293505,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.015834372532404162,
+        "MAE": 0.10507310804350553,
+        "RMSE": 0.14011912459057185,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -9.010040549045499,
+        "MAE": 0.4266591058607684,
+        "RMSE": 0.439849276348321,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.0560413814434233,
+        "MAE": 0.11000248393605624,
+        "RMSE": 0.1428651928275167,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.007619986192347161,
+        "MAE": 0.10869125197603476,
+        "RMSE": 0.13955144892394056,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.15999200831614235,
+        "MAE": 0.10583470832733881,
+        "RMSE": 0.14973159883948597,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -14.547058385290157,
+        "MAE": 0.5383893461443731,
+        "RMSE": 0.5481634544793221,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -2.5313912711682556,
+        "MAE": 0.2485693527449204,
+        "RMSE": 0.26125155435374137,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.033763377204058975,
+        "MAE": 0.10492108746495829,
+        "RMSE": 0.13665568724507451,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.015330874741549927,
+        "MAE": 0.10510345222630027,
+        "RMSE": 0.1400843953001778,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.050340074562870596,
+        "MAE": 0.10440538271709728,
+        "RMSE": 0.14247902394974474,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.24171781673157033,
+        "MAE": 0.08850035462537423,
+        "RMSE": 0.12106020063727876,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -7.536758469368545,
+        "MAE": 0.39413645985827905,
+        "RMSE": 0.40619302395993817,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.4240483501051069,
+        "MAE": 0.07481944108020808,
+        "RMSE": 0.10550644181450168,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.4580971851233532,
+        "MAE": 0.07706619624967702,
+        "RMSE": 0.10234029556114921,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -9.71658348499145,
+        "MAE": 0.4439097324770595,
+        "RMSE": 0.4551076536668589,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -1.8549685431287828,
+        "MAE": 0.22002652349840168,
+        "RMSE": 0.23490195276980827,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.553662303921983,
+        "MAE": 0.06421538421901203,
+        "RMSE": 0.09287904624904916,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -8.845347309869497,
+        "MAE": 0.42133946883429013,
+        "RMSE": 0.43621589247337456,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.015620324342978664,
+        "MAE": 0.10508594819993686,
+        "RMSE": 0.1401043614432374,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": 0.3585462414509386,
+        "MAE": 0.08473736980948787,
+        "RMSE": 0.11134446696230042,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.018749726428937574,
+        "MAE": 0.10490617633381964,
+        "RMSE": 0.14032004522259114,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": 0.41025832150499364,
+        "MAE": 0.0801326583725091,
+        "RMSE": 0.10676204258833276,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.7952516727784178,
+        "MAE": 0.17352071592244697,
+        "RMSE": 0.18627245286353705,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.011660517139115312,
+        "MAE": 0.11119883707820827,
+        "RMSE": 0.13983096789845859,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.04188073829739691,
+        "MAE": 0.11530956264698147,
+        "RMSE": 0.14190410796613936,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -1.6983661377567913,
+        "MAE": 0.2165469215029762,
+        "RMSE": 0.2283686068520234,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.05015075529298807,
+        "MAE": 0.12798154031559505,
+        "RMSE": 0.142466182756193,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": 0.42320176185639136,
+        "MAE": 0.07821081965057941,
+        "RMSE": 0.10558395501807084,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.11679914912936207,
+        "MAE": 0.11766565013936699,
+        "RMSE": 0.14691749018814246,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.4417086017079397,
+        "MAE": 0.0798436192049322,
+        "RMSE": 0.10387629037831514,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -2.474558028862721,
+        "MAE": 0.2484146886115008,
+        "RMSE": 0.2591407718965836,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.07722821905848254,
+        "MAE": 0.104753650334261,
+        "RMSE": 0.1335466861776089,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.3561364327775677,
+        "MAE": 0.09034881236218904,
+        "RMSE": 0.11155341992759846,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.023643339241592898,
+        "MAE": 0.10475139420957967,
+        "RMSE": 0.14065665848128373,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.003108330747378263,
+        "MAE": 0.10455638986616654,
+        "RMSE": 0.13923867505156268,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.020971421602465012,
+        "MAE": 0.10486497078852451,
+        "RMSE": 0.1404729672693729,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.010309330335717792,
+        "MAE": 0.11095432121487638,
+        "RMSE": 0.13973755667778764,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.011779621971758525,
+        "MAE": 0.10533341068726083,
+        "RMSE": 0.13983919894710747,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.41755052457455777,
+        "MAE": 0.08361278254289707,
+        "RMSE": 0.10609992884742024,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.2951810054440446,
+        "MAE": 0.09408676165580293,
+        "RMSE": 0.11671448638832164,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.36438389389643844,
+        "MAE": 0.08357866417335286,
+        "RMSE": 0.11083665490723639,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.42406320249367324,
+        "MAE": 0.1527596043244528,
+        "RMSE": 0.16590160808978102,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.0014513718329673964,
+        "MAE": 0.10867896045326558,
+        "RMSE": 0.13912362859556135,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.09228873346855893,
+        "MAE": 0.12732165355903707,
+        "RMSE": 0.14529634531022087,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.029076930238120413,
+        "MAE": 0.11376910672817399,
+        "RMSE": 0.1410294735049464,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.002152132811696461,
+        "MAE": 0.106426492268905,
+        "RMSE": 0.13917229564214942,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.022284241124826076,
+        "MAE": 0.10478648263826688,
+        "RMSE": 0.14056325207319154,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.007377967234336813,
+        "MAE": 0.1056894763852611,
+        "RMSE": 0.1395346885752957,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.004671702010781376,
+        "MAE": 0.10969610102994333,
+        "RMSE": 0.13934713641459764,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.016817588654335136,
+        "MAE": 0.1050152128393,
+        "RMSE": 0.140186918153288,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.023685417943023923,
+        "MAE": 0.10475032416429013,
+        "RMSE": 0.1406595494240988,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.2725169016260349,
+        "MAE": 0.13418262678020676,
+        "RMSE": 0.1568258835846538,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.011183775849260336,
+        "MAE": 0.1053752468261884,
+        "RMSE": 0.139798016601845,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.0038074567218477906,
+        "MAE": 0.10944414406857164,
+        "RMSE": 0.1392871884652469,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.02295151890278646,
+        "MAE": 0.10476912543027089,
+        "RMSE": 0.1406091196655976,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.5798704832990228,
+        "MAE": 0.06053424022192277,
+        "RMSE": 0.09011094841887853,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.5014946059531226,
+        "MAE": 0.06484727809199381,
+        "RMSE": 0.09815691364711703,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.014867802009312703,
+        "MAE": 0.10513180313688338,
+        "RMSE": 0.14005244676823614,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.018127830554871105,
+        "MAE": 0.10494063123738097,
+        "RMSE": 0.1402772094913884,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.0020128668759178403,
+        "MAE": 0.1064549643239934,
+        "RMSE": 0.13916262513766123,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.3714053335039037,
+        "MAE": 0.08855224536223848,
+        "RMSE": 0.11022276702381456,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.3868623412557003,
+        "MAE": 0.08836427664974669,
+        "RMSE": 0.10885915504049082,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.18645873392023615,
+        "MAE": 0.10932443548619264,
+        "RMSE": 0.12539371143269187,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.3366222576199598,
+        "MAE": 0.09054696794998884,
+        "RMSE": 0.11323127861518723,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.015985685486100465,
+        "MAE": 0.10506408348744051,
+        "RMSE": 0.14012955987890066,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.0005244731202700414,
+        "MAE": 0.1069689680673917,
+        "RMSE": 0.13905923037908283,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.4330334244479348,
+        "MAE": 0.08095660192883895,
+        "RMSE": 0.1046802356776016,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -8.804138559770369,
+        "MAE": 0.4253074590147201,
+        "RMSE": 0.4353020211477522,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -9.394929345511672,
+        "MAE": 0.43804677341808884,
+        "RMSE": 0.4482256795387057,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.2872737584849602,
+        "MAE": 0.09831818552645659,
+        "RMSE": 0.11736736056965733,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.23485705239930876,
+        "MAE": 0.1009968249140708,
+        "RMSE": 0.12160662997734673,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.2003711038970224,
+        "MAE": 0.1291358285422736,
+        "RMSE": 0.15231536991714892,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.0030733166646792487,
+        "MAE": 0.10625771565354751,
+        "RMSE": 0.13923624492668066,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -1.059885914000556,
+        "MAE": 0.17747320039910067,
+        "RMSE": 0.19952969896536044,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.011995772522776615,
+        "MAE": 0.10531849662462872,
+        "RMSE": 0.13985413535474003,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.019645716933262447,
+        "MAE": 0.1124924173459461,
+        "RMSE": 0.1403817374091471,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.02054529612285183,
+        "MAE": 0.10483297761556565,
+        "RMSE": 0.1404436494273279,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.25916762105809377,
+        "MAE": 0.08680787578605008,
+        "RMSE": 0.11965915761572873,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.05549477703723804,
+        "MAE": 0.1167994651185486,
+        "RMSE": 0.1428282147067857,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.007345834197678647,
+        "MAE": 0.10569296990122116,
+        "RMSE": 0.13953246313997536,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -2.363724882514795e-05,
+        "MAE": 0.1074140949740096,
+        "RMSE": 0.13902442135111964,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.05621968101741315,
+        "MAE": 0.11687422559890916,
+        "RMSE": 0.14287725283215538,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.02150582460337791,
+        "MAE": 0.1048070625610338,
+        "RMSE": 0.14050972606249287,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -1.8394429879404206,
+        "MAE": 0.21388087839877276,
+        "RMSE": 0.23426237393505533,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.5477530968594816,
+        "MAE": 0.06342700758734796,
+        "RMSE": 0.09349185228739673,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.02390727635759271,
+        "MAE": 0.10474469804058517,
+        "RMSE": 0.14067479083198473,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.008906688317668499,
+        "MAE": 0.10554643923586067,
+        "RMSE": 0.139640522116876,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.7652401653981373,
+        "MAE": 0.17251423679331626,
+        "RMSE": 0.18470891776581383,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.47653335250156703,
+        "MAE": 0.07680689175436281,
+        "RMSE": 0.10058436335466614,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.17313236905139728,
+        "MAE": 0.1341668401144628,
+        "RMSE": 0.15057728851727534,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.38026348823748934,
+        "MAE": 0.08255933964120592,
+        "RMSE": 0.10944338200679476,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.2640729322042399,
+        "MAE": 0.10107969746043789,
+        "RMSE": 0.11926234703320975,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.30194645803760856,
+        "MAE": 0.09955513187759829,
+        "RMSE": 0.11615297317969282,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.0067855927000946,
+        "MAE": 0.10575515528519952,
+        "RMSE": 0.1394936568306518,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.24331214813137558,
+        "MAE": 0.10228164408744789,
+        "RMSE": 0.12093286569267223,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.08471047060564096,
+        "MAE": 0.11852315655977125,
+        "RMSE": 0.1447914374244895,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.5797970306985216,
+        "MAE": 0.16240092732116204,
+        "RMSE": 0.1747376980112278,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -16.38780638096423,
+        "MAE": 0.5684988698803387,
+        "RMSE": 0.5797067552653177,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.0340848710939714,
+        "MAE": 0.12209220558132561,
+        "RMSE": 0.13663295077320162,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.0026775629718875926,
+        "MAE": 0.10911430026430992,
+        "RMSE": 0.1392087750033048,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.007062296453817396,
+        "MAE": 0.10572413358337439,
+        "RMSE": 0.13951282464901546,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.02049551782238579,
+        "MAE": 0.10483433697560823,
+        "RMSE": 0.14044022423323924,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.49774993635723275,
+        "MAE": 0.07527223299649431,
+        "RMSE": 0.09852489113193334,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.0005265616776448656,
+        "MAE": 0.10696784402958302,
+        "RMSE": 0.13905937551947536,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.023445486191705722,
+        "MAE": 0.10475643834940457,
+        "RMSE": 0.1406430645405688,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.3990736202537809,
+        "MAE": 0.08558879546846206,
+        "RMSE": 0.10776968118147714,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -6.264349676987635e-06,
+        "MAE": 0.107595818827736,
+        "RMSE": 0.13902321374579354,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.07608376146358631,
+        "MAE": 0.11882106123376547,
+        "RMSE": 0.14421452448398436,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.03912824396153003,
+        "MAE": 0.12128795948580176,
+        "RMSE": 0.13627578027920947,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.015423090154635277,
+        "MAE": 0.10509785784013345,
+        "RMSE": 0.14009075659943626,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.07014082389394938,
+        "MAE": 0.11611232882568964,
+        "RMSE": 0.13405856121362658,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.00120367243808861,
+        "MAE": 0.10667798509386771,
+        "RMSE": 0.13910642208372323,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.22557554698098115,
+        "MAE": 0.09040869016087415,
+        "RMSE": 0.12234197644046861,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -2.5800898043448743,
+        "MAE": 0.2515932110538272,
+        "RMSE": 0.2630467399799146,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.0702391468086021,
+        "MAE": 0.10984006855222918,
+        "RMSE": 0.13405147337857107,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.4152781288833802,
+        "MAE": 0.07885503016337,
+        "RMSE": 0.10630669898648014,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.021968112749366275,
+        "MAE": 0.10479479645409799,
+        "RMSE": 0.14054151669540227,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.012738337183069603,
+        "MAE": 0.10526825842403231,
+        "RMSE": 0.1399054358136294,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 300,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.13067291408478965,
+        "MAE": 0.11365109387141922,
+        "RMSE": 0.12962165705313733,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.0010136662560795706,
+        "MAE": 0.10847932514575541,
+        "RMSE": 0.1390932218053945,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -8.16166596214074,
+        "MAE": 0.40937646662976773,
+        "RMSE": 0.420797537837534,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.018384543191339864,
+        "MAE": 0.10492633805646526,
+        "RMSE": 0.14029489325443106,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -4.699657014535902,
+        "MAE": 0.3210805269489499,
+        "RMSE": 0.3319023477799927,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": 0.35172050138769495,
+        "MAE": 0.07965519435133941,
+        "RMSE": 0.11193531021764984,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -9.442497790939397,
+        "MAE": 0.4393987797698818,
+        "RMSE": 0.4492500762132768,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.018118711086649864,
+        "MAE": 0.10494114084419236,
+        "RMSE": 0.14027658125179984,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.00037757740075350377,
+        "MAE": 0.10808358623495237,
+        "RMSE": 0.139049021755466,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -0.019785145467771548,
+        "MAE": 0.1048539189721255,
+        "RMSE": 0.1403913351304529,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 10
+    },
+    {
+        "R2": -5.3115757478128245e-05,
+        "MAE": 0.1073542273979224,
+        "RMSE": 0.1390264704038889,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.36798061688782346,
+        "MAE": 0.14975614304609058,
+        "RMSE": 0.1626020195618901,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.00920138730956177,
+        "MAE": 0.10552313923835756,
+        "RMSE": 0.1396609149425548,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.019169101787658516,
+        "MAE": 0.10488326337946444,
+        "RMSE": 0.14034892410856822,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -2.338362925558002e-05,
+        "MAE": 0.10741474030395151,
+        "RMSE": 0.13902440372187824,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -6.238581879826801,
+        "MAE": 0.36339215408901343,
+        "RMSE": 0.37403540156178683,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.004972242574522223,
+        "MAE": 0.10977816036998683,
+        "RMSE": 0.13936797722027094,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -2.406105034546968e-05,
+        "MAE": 0.107655096614573,
+        "RMSE": 0.13902445080980075,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -4.808934126399045e-05,
+        "MAE": 0.10770517316014795,
+        "RMSE": 0.13902612101955517,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.0011511190685646877,
+        "MAE": 0.10669688215302758,
+        "RMSE": 0.13910277117465286,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -3.8497587460222134,
+        "MAE": 0.29559180947551933,
+        "RMSE": 0.30615829517782267,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.01634564894007773,
+        "MAE": 0.10504278482554796,
+        "RMSE": 0.14015438161312188,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.4704293426211913,
+        "MAE": 0.07992597591596022,
+        "RMSE": 0.10116910784605788,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.17751934341136266,
+        "MAE": 0.09157933748473679,
+        "RMSE": 0.12608075762398246,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.34707535410719215,
+        "MAE": 0.09231431350764205,
+        "RMSE": 0.11233562204982486,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": 0.4610055178435781,
+        "MAE": 0.06860564190028894,
+        "RMSE": 0.1020653015520619,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -6.435789439654498,
+        "MAE": 0.3680583656034887,
+        "RMSE": 0.37909626452672585,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.019501582689469776,
+        "MAE": 0.10486527554916615,
+        "RMSE": 0.14037181507518,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.013462825451129978,
+        "MAE": 0.10522063599004375,
+        "RMSE": 0.13995546933268144,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.05683168520234316,
+        "MAE": 0.11512488886942888,
+        "RMSE": 0.1429186404408958,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 20
+    },
+    {
+        "R2": -0.0519185393450281,
+        "MAE": 0.11642328007912742,
+        "RMSE": 0.14258604342630157,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -3.771281438557941,
+        "MAE": 0.292980107336792,
+        "RMSE": 0.3036711126543821,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -6.479505503180493,
+        "MAE": 0.3697556486320128,
+        "RMSE": 0.3802090118479507,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.0022356292995786564,
+        "MAE": 0.10734722903423898,
+        "RMSE": 0.13917809324287367,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -7.14265557408833e-05,
+        "MAE": 0.1077425996519844,
+        "RMSE": 0.13902774317328484,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.0083546672989816,
+        "MAE": 0.10559114594480178,
+        "RMSE": 0.13960231489156952,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -6.031305744628065,
+        "MAE": 0.3575429405198182,
+        "RMSE": 0.36864127109828965,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.019352307363238674,
+        "MAE": 0.10487333249736143,
+        "RMSE": 0.14036153808497057,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.5853299275296961,
+        "MAE": 0.16242491380419513,
+        "RMSE": 0.17504342102789466,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.00672413902463509,
+        "MAE": 0.10576213031878207,
+        "RMSE": 0.13948939945510164,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -2.46409333024148,
+        "MAE": 0.24776077360101137,
+        "RMSE": 0.2587502366092482,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.019210973537105325,
+        "MAE": 0.10488098950097056,
+        "RMSE": 0.14035180714074458,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.5321392761704269,
+        "MAE": 0.06960846041474796,
+        "RMSE": 0.09509206041633696,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.01816661389190899,
+        "MAE": 0.10493846540843255,
+        "RMSE": 0.14027988124159596,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -1.4746859167449138,
+        "MAE": 0.20720457295318706,
+        "RMSE": 0.21869860197036345,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.4097600108603765,
+        "MAE": 0.1403120094807231,
+        "RMSE": 0.16506635338775583,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -11.369894426814353,
+        "MAE": 0.4789083567934004,
+        "RMSE": 0.48895507704138386,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.06214239340939076,
+        "MAE": 0.11746782632101153,
+        "RMSE": 0.14327728225667036,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.014765045132342447,
+        "MAE": 0.10513815386986837,
+        "RMSE": 0.1400453563293049,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.38749297840608554,
+        "MAE": 0.07942869955384428,
+        "RMSE": 0.10880315759201654,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.05451079458927843,
+        "MAE": 0.11669719980392625,
+        "RMSE": 0.14276162355479485,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -2.015637449961798,
+        "MAE": 0.22961502640851708,
+        "RMSE": 0.24142126845418418,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.0007296614195064777,
+        "MAE": 0.10686753225074246,
+        "RMSE": 0.13907348883301482,
+        "Hidden Units": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -4.532071182052476,
+        "MAE": 0.3160463297464573,
+        "RMSE": 0.32698651545639135,
+        "Hidden Units": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.5513049867324056,
+        "MAE": 0.06271742021251953,
+        "RMSE": 0.0931239920008604,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -7.7479633177356675,
+        "MAE": 0.4008762808789881,
+        "RMSE": 0.4111870609898449,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.03801020644891162,
+        "MAE": 0.11487237322124055,
+        "RMSE": 0.1416402795823991,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.02444094735383806,
+        "MAE": 0.11314454821653813,
+        "RMSE": 0.140711446629687,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.010680461537480701,
+        "MAE": 0.10541146277607263,
+        "RMSE": 0.13976322020674523,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": -0.026331096046225966,
+        "MAE": 0.11339667929715412,
+        "RMSE": 0.14084119690489366,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 30
+    },
+    {
+        "R2": 0.4740383172551331,
+        "MAE": 0.0761768085064081,
+        "RMSE": 0.1008237894955165,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.0012018199415806397,
+        "MAE": 0.10856956651343816,
+        "RMSE": 0.13910629339148634,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.014857844751017701,
+        "MAE": 0.10513241756788065,
+        "RMSE": 0.14005175971234315,
+        "Hidden Units": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.15952500222791743,
+        "MAE": 0.09973111199622701,
+        "RMSE": 0.12745250121191337,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -4851.289023810669,
+        "MAE": 9.640690833803205,
+        "RMSE": 9.68410064111815,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -2.1538298561670097,
+        "MAE": 0.23436346449434559,
+        "RMSE": 0.24689090606827954,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -7.441607655844784e-05,
+        "MAE": 0.10732120184470625,
+        "RMSE": 0.13902795097145346,
+        "Hidden Units": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -1.118343031980551e-05,
+        "MAE": 0.107616577822466,
+        "RMSE": 0.1390235556764309,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -1.746603712771133e-07,
+        "MAE": 0.10752374816823891,
+        "RMSE": 0.1390227904437118,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.05181435517035471,
+        "MAE": 0.1164121297530798,
+        "RMSE": 0.1425789822440239,
+        "Hidden Units": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.6572008562853109,
+        "MAE": 0.1664565484961849,
+        "RMSE": 0.17896723892966857,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": 0.4780179048031341,
+        "MAE": 0.06763292073544085,
+        "RMSE": 0.10044163337452702,
+        "Hidden Units": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.31442515096852675,
+        "MAE": 0.143085562212356,
+        "RMSE": 0.15938736602335415,
+        "Hidden Units": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -6.674247406460966,
+        "MAE": 0.3748201488617121,
+        "RMSE": 0.3851269067231631,
+        "Hidden Units": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
+    },
+    {
+        "R2": -0.019769921019018977,
+        "MAE": 0.10485434246183647,
+        "RMSE": 0.14039028717016744,
+        "Hidden Units": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 400,
+        "Number of Iterations": 40
     }
 ]

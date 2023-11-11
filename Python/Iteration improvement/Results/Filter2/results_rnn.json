@@ -1,0 +1,72 @@
+[
+    {
+        "R2": -0.0006739644500621811,
+        "MAE": 0.100809837180356,
+        "RMSE": 0.13017160218107018,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 23.418301105499268
+    },
+    {
+        "R2": -0.11934975039601259,
+        "MAE": 0.0999232983864403,
+        "RMSE": 0.13767429252579916,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 12.775510787963867
+    },
+    {
+        "R2": -3.194728729805151,
+        "MAE": 0.24319307181756614,
+        "RMSE": 0.26651514317451325,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 21.178322315216064
+    },
+    {
+        "R2": -0.12462175113211704,
+        "MAE": 0.10795125967010803,
+        "RMSE": 0.1379981262284828,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 21.183664560317993
+    },
+    {
+        "R2": -0.03114602977913683,
+        "MAE": 0.09672507126925368,
+        "RMSE": 0.13213870218597423,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 12.00244688987732
+    },
+    {
+        "R2": -0.0015084450433417995,
+        "MAE": 0.10059945916774012,
+        "RMSE": 0.13022586712793113,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.1,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 21.572014570236206
+    },
+    {
+        "R2": -101.56180187428228,
+        "MAE": 1.3067513096498835,
+        "RMSE": 1.3178402601635322,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 12.754316568374634
+    }
+]
