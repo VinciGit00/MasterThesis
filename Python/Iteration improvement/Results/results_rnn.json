@@ -1,282 +1,582 @@
 [
     {
-        "R2": 0.48525906237557026,
-        "MAE": 0.06834935942353854,
-        "RMSE": 0.09336074415394775,
+        "R2": 0.3989700730508845,
+        "MAE": 0.07306310822967729,
+        "RMSE": 0.1008830023531237,
         "Number of Hidden Layers": 256,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 10,
-        "training_time": 702.5793595314026
+        "training_time": 92.06783843040466
     },
     {
-        "R2": 0.33544935191388314,
-        "MAE": 0.0775309950292483,
-        "RMSE": 0.10608011771443056,
-        "Number of Hidden Layers": 64,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 10,
-        "training_time": 141.5116903781891
-    },
-    {
-        "R2": 0.25608287558682674,
-        "MAE": 0.0806776863585991,
-        "RMSE": 0.11223601231023848,
+        "R2": 0.4876398628503632,
+        "MAE": 0.06946368938013589,
+        "RMSE": 0.09314458598514454,
         "Number of Hidden Layers": 256,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 10,
-        "training_time": 137.86039304733276
+        "training_time": 138.06524872779846
     },
     {
-        "R2": -0.02128591195953855,
-        "MAE": 0.09925455848375957,
-        "RMSE": 0.1315054102950298,
+        "R2": 0.3082367275395307,
+        "MAE": 0.07978896040177334,
+        "RMSE": 0.10823025963272666,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 137.99265575408936
+    },
+    {
+        "R2": 0.469205104280604,
+        "MAE": 0.06900376552906731,
+        "RMSE": 0.09480545328132209,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 136.422349691391
+    },
+    {
+        "R2": 0.3117756236558774,
+        "MAE": 0.0801499335327333,
+        "RMSE": 0.10795306454882773,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 83.27683162689209
+    },
+    {
+        "R2": 0.43456910019637407,
+        "MAE": 0.07289552429763528,
+        "RMSE": 0.0978497497216588,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 10,
+        "training_time": 82.67974138259888
+    },
+    {
+        "R2": 0.42056436091547056,
+        "MAE": 0.07204982715319733,
+        "RMSE": 0.09905412178490426,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20,
+        "training_time": 137.18306589126587
+    },
+    {
+        "R2": 0.5339171585372248,
+        "MAE": 0.06649193043330934,
+        "RMSE": 0.08883855941717984,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20,
+        "training_time": 137.9047396183014
+    },
+    {
+        "R2": -0.025205665763614604,
+        "MAE": 0.099202810739628,
+        "RMSE": 0.13175753126007372,
         "Number of Hidden Layers": 128,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 20,
-        "training_time": 213.69180870056152
+        "training_time": 82.9593415260315
     },
     {
-        "R2": -0.02520038134259117,
-        "MAE": 0.09920294404373886,
-        "RMSE": 0.13175719168764027,
-        "Number of Hidden Layers": 64,
+        "R2": 0.48545616183452767,
+        "MAE": 0.06960232715342354,
+        "RMSE": 0.0933428680606858,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 20,
+        "training_time": 137.5968930721283
+    },
+    {
+        "R2": -0.04154912256211185,
+        "MAE": 0.09944210526725601,
+        "RMSE": 0.13280359413745563,
+        "Number of Hidden Layers": 128,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
         "Number of Iterations": 20,
-        "training_time": 211.06933641433716
+        "training_time": 81.07913064956665
     },
     {
-        "R2": 0.38115111529756496,
-        "MAE": 0.07439881762800567,
-        "RMSE": 0.10236753752155549,
-        "Number of Hidden Layers": 64,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20,
-        "training_time": 716.3097229003906
-    },
-    {
-        "R2": 0.43984684226711834,
-        "MAE": 0.0724453186851932,
-        "RMSE": 0.09739201343610054,
-        "Number of Hidden Layers": 128,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20,
-        "training_time": 137.93919134140015
-    },
-    {
-        "R2": 0.4847594075564735,
-        "MAE": 0.07026014654319725,
-        "RMSE": 0.09340604541869046,
-        "Number of Hidden Layers": 64,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20,
-        "training_time": 138.23347330093384
-    },
-    {
-        "R2": 0.4257962218352279,
-        "MAE": 0.07106559063492056,
-        "RMSE": 0.09860591624934703,
-        "Number of Hidden Layers": 64,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20,
-        "training_time": 222.62262868881226
-    },
-    {
-        "R2": 0.3746467299567787,
-        "MAE": 0.0754153227533011,
-        "RMSE": 0.10290409619999086,
-        "Number of Hidden Layers": 128,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 20,
-        "training_time": 139.59993076324463
-    },
-    {
-        "R2": 0.35456816217997966,
-        "MAE": 0.07415395226291936,
-        "RMSE": 0.10454304421430612,
+        "R2": 0.3686650510102,
+        "MAE": 0.07558215167077761,
+        "RMSE": 0.10339507813121816,
         "Number of Hidden Layers": 256,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 30,
-        "training_time": 210.1627595424652
+        "training_time": 82.13514161109924
     },
     {
-        "R2": 0.4951402972528367,
-        "MAE": 0.06778924860250153,
-        "RMSE": 0.09246030115881428,
-        "Number of Hidden Layers": 64,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 743.7722499370575
-    },
-    {
-        "R2": 0.4945021589563392,
-        "MAE": 0.0689370487532173,
-        "RMSE": 0.09251871721567002,
-        "Number of Hidden Layers": 128,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 143.794677734375
-    },
-    {
-        "R2": 0.47370259738005915,
-        "MAE": 0.06998338022803734,
-        "RMSE": 0.09440294948005308,
+        "R2": 0.36045901200826813,
+        "MAE": 0.07378625315795471,
+        "RMSE": 0.10406486898684807,
         "Number of Hidden Layers": 256,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 30,
-        "training_time": 142.2141456604004
+        "training_time": 472.5508201122284
     },
     {
-        "R2": 0.1936990246713045,
-        "MAE": 0.08565306287937982,
-        "RMSE": 0.11684726261568423,
+        "R2": 0.38538906223698555,
+        "MAE": 0.0723775708263972,
+        "RMSE": 0.1020164231515976,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 471.9929463863373
+    },
+    {
+        "R2": 0.4558340236800026,
+        "MAE": 0.07085682116287612,
+        "RMSE": 0.09599213302868828,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 468.5586075782776
+    },
+    {
+        "R2": 0.24760599688208162,
+        "MAE": 0.08292208318547052,
+        "RMSE": 0.1128736613508821,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 469.80570125579834
+    },
+    {
+        "R2": 0.4799911385229124,
+        "MAE": 0.06861745508610771,
+        "RMSE": 0.09383726090552733,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 460.36121129989624
+    },
+    {
+        "R2": 0.35707505834528264,
+        "MAE": 0.07692409277198807,
+        "RMSE": 0.10433982094662594,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 456.56768012046814
+    },
+    {
+        "R2": 0.4520700321772061,
+        "MAE": 0.07144374486566049,
+        "RMSE": 0.09632354930569306,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 133.38445901870728
+    },
+    {
+        "R2": 0.2757307758619689,
+        "MAE": 0.07988235923072334,
+        "RMSE": 0.110743938768058,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 134.76815152168274
+    },
+    {
+        "R2": 0.3545678054584497,
+        "MAE": 0.07694855343573738,
+        "RMSE": 0.1045430731040721,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 134.85148978233337
+    },
+    {
+        "R2": 0.4148306171007544,
+        "MAE": 0.07367524633855128,
+        "RMSE": 0.0995430051088107,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 133.72005200386047
+    },
+    {
+        "R2": 0.407354782571983,
+        "MAE": 0.07277869448395462,
+        "RMSE": 0.10017684322561636,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 133.54316020011902
+    },
+    {
+        "R2": 0.3260530173217653,
+        "MAE": 0.07681706373388518,
+        "RMSE": 0.10682743890545339,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 80.43016600608826
+    },
+    {
+        "R2": 0.35669633086113217,
+        "MAE": 0.07652025910819191,
+        "RMSE": 0.10437054812608884,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 80.33383560180664
+    },
+    {
+        "R2": 0.42126492563916074,
+        "MAE": 0.07214585634171533,
+        "RMSE": 0.09899422314685152,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 134.33085131645203
+    },
+    {
+        "R2": 0.4033013954038118,
+        "MAE": 0.07501412110654938,
+        "RMSE": 0.10051883838618572,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 134.75108218193054
+    },
+    {
+        "R2": 0.4328718502169454,
+        "MAE": 0.07165693953640476,
+        "RMSE": 0.09799649713637329,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 30,
+        "training_time": 459.18134665489197
+    },
+    {
+        "R2": 0.37483674627995955,
+        "MAE": 0.07432881757409143,
+        "RMSE": 0.10288846108259918,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 79.37163925170898
+    },
+    {
+        "R2": 0.29840664844821996,
+        "MAE": 0.08229375162940006,
+        "RMSE": 0.10899653263243392,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 80.44819235801697
+    },
+    {
+        "R2": 0.49198024909975013,
+        "MAE": 0.06757779233516008,
+        "RMSE": 0.09274921629855162,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 80.48420763015747
+    },
+    {
+        "R2": 0.044119166537011534,
+        "MAE": 0.09380011054803225,
+        "RMSE": 0.1272248146508773,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 80.51370239257812
+    },
+    {
+        "R2": -0.05527477241406231,
+        "MAE": 0.09890165869119709,
+        "RMSE": 0.13367578034675145,
         "Number of Hidden Layers": 64,
         "Learning Rate": 0.01,
         "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 213.30400729179382
+        "Number of Iterations": 40,
+        "training_time": 134.2601089477539
     },
     {
-        "R2": 0.43407827500488094,
-        "MAE": 0.07273370297486792,
-        "RMSE": 0.09789220999764936,
+        "R2": 0.45263571828077487,
+        "MAE": 0.06833431649524871,
+        "RMSE": 0.09627381396776964,
         "Number of Hidden Layers": 64,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 154.78049969673157
+        "Number of Iterations": 40,
+        "training_time": 461.8842062950134
     },
     {
-        "R2": 0.4453703425778017,
-        "MAE": 0.07090690196950945,
-        "RMSE": 0.096910647299426,
+        "R2": 0.4694790689549322,
+        "MAE": 0.06972052912196901,
+        "RMSE": 0.09478098366256686,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 463.5369441509247
+    },
+    {
+        "R2": 0.5207811836653055,
+        "MAE": 0.06740964521950056,
+        "RMSE": 0.0900817638071757,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 81.33240008354187
+    },
+    {
+        "R2": -0.06074872637143547,
+        "MAE": 0.09917947207723117,
+        "RMSE": 0.13402203547357922,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 80.26902508735657
+    },
+    {
+        "R2": 0.4029792055997776,
+        "MAE": 0.07274577365099612,
+        "RMSE": 0.10054597249879689,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 81.02217602729797
+    },
+    {
+        "R2": -984.569155271626,
+        "MAE": 4.01849615172505,
+        "RMSE": 4.0852016782320035,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 133.8106291294098
+    },
+    {
+        "R2": 0.3906546473426781,
+        "MAE": 0.07614195842014564,
+        "RMSE": 0.1015784780842942,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 133.14463329315186
+    },
+    {
+        "R2": 0.28005293514383833,
+        "MAE": 0.08011575407846265,
+        "RMSE": 0.11041300576025459,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 457.7914524078369
+    },
+    {
+        "R2": 0.45517993222784414,
+        "MAE": 0.07165499266815795,
+        "RMSE": 0.09604980732288643,
         "Number of Hidden Layers": 256,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 743.7902705669403
+        "Number of Iterations": 40,
+        "training_time": 81.47247338294983
     },
     {
-        "R2": 0.42781368452231594,
-        "MAE": 0.07401959191669118,
-        "RMSE": 0.09843253807750459,
+        "R2": 0.48438074718429047,
+        "MAE": 0.06837014813278947,
+        "RMSE": 0.09344036207818389,
         "Number of Hidden Layers": 256,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 143.80661273002625
+        "Number of Iterations": 40,
+        "training_time": 136.40880703926086
     },
     {
-        "R2": 0.2672359930627266,
-        "MAE": 0.07944912486272887,
-        "RMSE": 0.11139149031917928,
+        "R2": 0.4856573119409354,
+        "MAE": 0.06924243472398275,
+        "RMSE": 0.09332462106031146,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 81.85340142250061
+    },
+    {
+        "R2": 0.38997949521190656,
+        "MAE": 0.07544383423124272,
+        "RMSE": 0.10163473677182787,
         "Number of Hidden Layers": 64,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 212.92237544059753
+        "Number of Iterations": 40,
+        "training_time": 460.43189120292664
     },
     {
-        "R2": 0.27200315938529573,
-        "MAE": 0.07938897173480812,
-        "RMSE": 0.11102855747282818,
-        "Number of Hidden Layers": 256,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 140.96834206581116
-    },
-    {
-        "R2": 0.493700633305009,
-        "MAE": 0.06853097375928495,
-        "RMSE": 0.09259203775885393,
-        "Number of Hidden Layers": 128,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 211.00459694862366
-    },
-    {
-        "R2": 0.5373233528771284,
-        "MAE": 0.06634575534413044,
-        "RMSE": 0.0885133422418204,
-        "Number of Hidden Layers": 256,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 691.7594690322876
-    },
-    {
-        "R2": 0.3503886621004578,
-        "MAE": 0.07624720493461463,
-        "RMSE": 0.10488098276066436,
-        "Number of Hidden Layers": 128,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 204.01964354515076
-    },
-    {
-        "R2": 0.026447406659066086,
-        "MAE": 0.0936837217422447,
-        "RMSE": 0.12839545747955872,
-        "Number of Hidden Layers": 128,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 222.52469182014465
-    },
-    {
-        "R2": 0.40197505118974186,
-        "MAE": 0.07532067739365766,
-        "RMSE": 0.1006304932261658,
-        "Number of Hidden Layers": 256,
-        "Learning Rate": 0.001,
-        "Number of Epochs": 200,
-        "Number of Iterations": 30,
-        "training_time": 743.745532989502
-    },
-    {
-        "R2": 0.4209163556263995,
-        "MAE": 0.07226982664634052,
-        "RMSE": 0.0990240305880677,
+        "R2": 0.430291175758037,
+        "MAE": 0.07160432407558108,
+        "RMSE": 0.0982192069531265,
         "Number of Hidden Layers": 128,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 40,
-        "training_time": 211.65338253974915
+        "training_time": 134.85277438163757
     },
     {
-        "R2": 0.4543130217888497,
-        "MAE": 0.07094692874801967,
-        "RMSE": 0.09612619353616388,
+        "R2": 0.4384944538365394,
+        "MAE": 0.07297972884314058,
+        "RMSE": 0.09750951025604312,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 81.5508463382721
+    },
+    {
+        "R2": 0.42138217889439844,
+        "MAE": 0.07238874389660538,
+        "RMSE": 0.09898419439327347,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 134.27686643600464
+    },
+    {
+        "R2": 0.4461007269676919,
+        "MAE": 0.07087017288194103,
+        "RMSE": 0.09684681610920202,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 200,
+        "Number of Iterations": 40,
+        "training_time": 81.00192832946777
+    },
+    {
+        "R2": 0.4672445160169857,
+        "MAE": 0.07136277862326809,
+        "RMSE": 0.09498038255856499,
         "Number of Hidden Layers": 128,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 40,
-        "training_time": 141.71661686897278
+        "training_time": 133.74213886260986
     },
     {
-        "R2": 0.2952345802685664,
-        "MAE": 0.07815513489100441,
-        "RMSE": 0.1092426542035118,
-        "Number of Hidden Layers": 128,
+        "R2": 0.46018610892043577,
+        "MAE": 0.07256844847276268,
+        "RMSE": 0.0956075035094027,
+        "Number of Hidden Layers": 64,
         "Learning Rate": 0.001,
         "Number of Epochs": 200,
         "Number of Iterations": 40,
-        "training_time": 263.79430508613586
+        "training_time": 80.75983500480652
+    },
+    {
+        "R2": 0.4007386726958069,
+        "MAE": 0.07249982687660338,
+        "RMSE": 0.10073446308398193,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10,
+        "training_time": 120.99264788627625
+    },
+    {
+        "R2": 0.31730359189366475,
+        "MAE": 0.07909386177753788,
+        "RMSE": 0.10751863916496565,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10,
+        "training_time": 122.00137042999268
+    },
+    {
+        "R2": 0.27766464520944734,
+        "MAE": 0.07975302307547114,
+        "RMSE": 0.11059599139398298,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10,
+        "training_time": 121.09068393707275
+    },
+    {
+        "R2": 0.2998109514189351,
+        "MAE": 0.08096087397850725,
+        "RMSE": 0.10888739475082136,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10,
+        "training_time": 120.1506974697113
+    },
+    {
+        "R2": -0.05487158245887258,
+        "MAE": 0.10255349471541539,
+        "RMSE": 0.13365024108324583,
+        "Number of Hidden Layers": 64,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 10,
+        "training_time": 120.90800046920776
+    },
+    {
+        "R2": -0.013496075439115351,
+        "MAE": 0.09957356437030122,
+        "RMSE": 0.13100292292627028,
+        "Number of Hidden Layers": 128,
+        "Learning Rate": 0.01,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20,
+        "training_time": 119.8805239200592
+    },
+    {
+        "R2": 0.1873892079847691,
+        "MAE": 0.08334398700059636,
+        "RMSE": 0.1173035736063127,
+        "Number of Hidden Layers": 256,
+        "Learning Rate": 0.001,
+        "Number of Epochs": 300,
+        "Number of Iterations": 20,
+        "training_time": 686.4498388767242
     }
 ]
