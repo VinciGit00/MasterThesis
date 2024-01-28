@@ -1,3 +1,5 @@
+library(glmnet)
+
 # Set the working directory and read the data
 setwd("~/Github/MasterThesis/R")
 df <- read.csv("Agrimonia_scaled_Bertonico_for_interactions.csv")
@@ -35,3 +37,24 @@ cat("Coefficients for the Best Lambda:\n")
 for (i in 1:length(coefficients)) {
   cat(sprintf("%s: %.4f\n", variable_names[i], coefficients[i]))
 }
+
+# Predict the response variable using the ridge model
+y_pred <- predict(ridge_model, newx = x_matrix, s = best_lambda)
+
+# Calculate residuals
+residuals <- y - y_pred
+
+# Plot the distribution of residuals
+hist(residuals, main = "Distribution of Residuals", xlab = "Residuals")
+
+# Print summary statistics of residuals
+cat("Summary Statistics of Residuals:\n")
+summary(residuals)
+
+# Plot predicted vs. real values
+plot(y, y_pred, main = "Predicted vs. Real", xlab = "Real Values", ylab = "Predicted Values", pch = 16, col = "blue")
+abline(0, 1, col = "red", lty = 2)
+
+# Print summary statistics of predicted vs. real values
+cat("\nSummary Statistics of Predicted vs. Real Values:\n")
+summary(cbind(Real = y, Predicted = y_pred))
