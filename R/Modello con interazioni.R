@@ -4,6 +4,8 @@ setwd("~/Github/MasterThesis/R")
 # Carica le librerie necessarie
 library(em)
 library(caret)
+library(e1071)  # Questa libreria contiene la funzione skewness
+library(moments)  # Questa libreria contiene la funzione kurtosis
 
 # Leggi il file CSV
 df <- read.csv("Agrimonia_scaled_Bertonico_for_interactions.csv")
@@ -42,6 +44,27 @@ model <- lm(response ~ .^3, data = model_data)
 
 # Visualizza il riassunto del modello
 summary(model)
+
+# Calcola i residui del modello
+residuals <- residuals(model)
+
+# Calcola la media dei residui
+residuals_mean <- mean(residuals)
+
+# Calcola la skewness dei residui
+residuals_skewness <- skewness(residuals)
+
+# Calcola la deviazione standard dei residui
+residuals_sd <- sd(residuals)
+
+# Calcola la kurtosis dei residui
+residuals_kurtosis <- kurtosis(residuals)
+
+# Stampa i risultati
+cat("Media dei residui:", residuals_mean, "\n")
+cat("Skewness dei residui:", residuals_skewness, "\n")
+cat("Deviazione standard dei residui:", residuals_sd, "\n")
+cat("Kurtosis dei residui:", residuals_kurtosis, "\n")
 
 # Calcola le previsioni del modello
 predictions <- predict(model, newdata = model_data)

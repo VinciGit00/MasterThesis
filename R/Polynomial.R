@@ -25,6 +25,15 @@ model <- lm(y ~ poly(x_matrix, degree, raw = TRUE), data = df)
 # Make predictions for the original data
 predictions <- predict(model, newdata = df)
 
+# Calculate residuals
+residuals <- df$AQ_nh3 - predictions
+
+# Calculate Root Mean Squared Error (RMSE)
+rmse <- sqrt(mean(residuals^2))
+
+# Print the RMSE
+cat(sprintf("\nRoot Mean Squared Error (RMSE): %.4f\n", rmse))
+
 # Plot the time series
 par(mfrow = c(2, 1))  # Set up a 2x1 grid for two plots
 
@@ -37,7 +46,6 @@ lines(predictions, col = "red", lwd = 2)
 legend("topright", legend = c("Actual", "Predicted"), col = c("blue", "red"), lwd = 2)
 
 # Plot residuals
-residuals <- df$AQ_nh3 - predictions
 plot(residuals, type = "l", col = "green", lwd = 2, main = "Residuals", xlab = "Index", ylab = "Residuals")
 
 # Add a horizontal line at y = 0

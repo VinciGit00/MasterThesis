@@ -1,3 +1,4 @@
+# Load required libraries
 library(glmnet)
 
 # Set the working directory and read the data
@@ -51,6 +52,13 @@ hist(residuals, main = "Distribution of Residuals", xlab = "Residuals")
 cat("Summary Statistics of Residuals:\n")
 summary(residuals)
 
+# Add skewness, mean, standard deviation, and kurtosis calculations
+cat("\nAdditional Summary Statistics of Residuals:\n")
+cat(sprintf("Skewness: %.4f\n", skewness(residuals)))
+cat(sprintf("Mean: %.4f\n", mean(residuals)))
+cat(sprintf("Standard Deviation: %.4f\n", sd(residuals)))
+cat(sprintf("Kurtosis: %.4f\n", kurtosis(residuals)))
+
 # Plot predicted vs. real values
 plot(y, y_pred, main = "Predicted vs. Real", xlab = "Real Values", ylab = "Predicted Values", pch = 16, col = "blue")
 abline(0, 1, col = "red", lty = 2)
@@ -58,3 +66,9 @@ abline(0, 1, col = "red", lty = 2)
 # Print summary statistics of predicted vs. real values
 cat("\nSummary Statistics of Predicted vs. Real Values:\n")
 summary(cbind(Real = y, Predicted = y_pred))
+
+# Calculate the Root Mean Squared Error (RMSE)
+rmse <- sqrt(mean(residuals^2))
+
+# Print the RMSE
+cat(sprintf("\nRoot Mean Squared Error (RMSE): %.4f\n", rmse))

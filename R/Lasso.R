@@ -1,6 +1,8 @@
+# Load required libraries
 library(glmnet)
 library(e1071)
 
+# Set the working directory and read the data
 setwd("~/Github/MasterThesis/R")
 
 # Read data
@@ -68,10 +70,15 @@ residuals <- y - predictions
 # Plot the distribution of residuals
 hist(residuals, main = "Error Distribution", xlab = "Residuals", col = "lightblue", border = "black")
 
-
 # Print summary statistics of residuals
 cat("Summary Statistics of Residuals:\n")
 cat("Mean:", mean(residuals), "\n")
 cat("Standard Deviation:", sd(residuals), "\n")
 cat("Skewness:", e1071::skewness(residuals), "\n")
 cat("Kurtosis:", e1071::kurtosis(residuals), "\n")
+
+# Calculate the Root Mean Squared Error (RMSE)
+rmse <- sqrt(mean(residuals^2))
+
+# Print the RMSE
+cat(sprintf("\nRoot Mean Squared Error (RMSE): %.4f\n", rmse))
