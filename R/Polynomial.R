@@ -20,39 +20,49 @@ y <- df$AQ_nh3
 
 # Fit a polynomial regression model
 degree <- 2  # You can change this to the desired degree of the polynomial
-model <- lm(y ~ poly(x_matrix, degree, raw = TRUE), data = df)
+poly_model <- lm(y ~ poly(x_matrix, degree, raw = TRUE), data = df)
 
-# Make predictions for the original data
-predictions <- predict(model, newdata = df)
+# Perform Lasso regression
+lasso_model <- cv.glmnet(x_matrix, y, alpha = 1)  # Use alpha = 1 for Lasso regression
+
+# Plot the cross-validated mean squared error (MSE) against lambda
+plot(lasso_model)
+
+# Select the best lambda value based on cross-validated MSE
+best_lambda <- lasso_model$lambda.min
+
+# Print the best lambda value
+cat(sprintf("\nBest lambda value: %.4f\n", best_lambda))
+
+# Get the coefficients of the selected model
+selected_coefs <- coef(lasso_model, s = best_lambda)
+
+# Print the coefficients
+print(selected_coefs)
+
+# Get the indices of non-zero coefficients
+non_zero_indices <- which(selected_coefs != 0)
+
+# Extract the names of selected covariates
+selected_covariates <- colnames(x_matrix)[non_zero_indices]
+
+# Print the selected covariates and their coefficients
+cat("\nSelected covariates and their coefficients:\n")
+for (i in non_zero_indices) {
+  coef_value <- selected_coefs[i]
+  covariate_name <- colnames(x_matrix)[i]
+  cat(sprintf("%s: %.4f\n", covariate_name, coef_value))
+}
+
+# Make predictions using the selected covariates
+x_selected <- x_matrix[, non_zero_indices-1]
+lasso_predictions <- predict(poly_model, newdata = as.data.frame(x_selected))
 
 # Calculate residuals
-residuals <- df$AQ_nh3 - predictions
+lasso_residuals <- y - lasso_predictions
 
-# Calculate Root Mean Squared Error (RMSE)
-rmse <- sqrt(mean(residuals^2))
+# Calculate Root Mean Squared Error (RMSE) for Lasso model
+lasso_rmse <- sqrt(mean(lasso_residuals^2))
 
-# Print the RMSE
-cat(sprintf("\nRoot Mean Squared Error (RMSE): %.4f\n", rmse))
-
-# Plot the time series
-par(mfrow = c(2, 1))  # Set up a 2x1 grid for two plots
-
-# Plot actual values
-plot(df$AQ_nh3, type = "l", col = "blue", lwd = 2, main = "Actual vs Predicted Time Series",
-     xlab = "Index", ylab = "AQ_nh3")
-lines(predictions, col = "red", lwd = 2)
-
-# Add a legend
-legend("topright", legend = c("Actual", "Predicted"), col = c("blue", "red"), lwd = 2)
-
-# Plot residuals
-plot(residuals, type = "l", col = "green", lwd = 2, main = "Residuals", xlab = "Index", ylab = "Residuals")
-
-# Add a horizontal line at y = 0
-abline(h = 0, col = "black", lty = 2)
-
-# Reset the plotting layout
-par(mfrow = c(1, 1))
-
-# Print the model summary to see coefficients
-summary(model)
+# Print the RMSE for Lasso model
+cat(sprintf("\nRoot Mean Squared Error (RMSE) for Lasso model: %.4f\n", lasso_rmse))

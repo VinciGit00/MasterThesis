@@ -6,6 +6,7 @@ library(em)
 library(caret)
 library(e1071)  # Questa libreria contiene la funzione skewness
 library(moments)  # Questa libreria contiene la funzione kurtosis
+library(glmnet)
 
 # Leggi il file CSV
 df <- read.csv("Agrimonia_scaled_Bertonico_for_interactions.csv")
@@ -14,10 +15,10 @@ df <- read.csv("Agrimonia_scaled_Bertonico_for_interactions.csv")
 df <- na.omit(df)
 
 # Aggiungi colonne per le stagioni
-df$Spring <- ifelse(df$Season == "Spring", 1, 0)
-df$Summer <- ifelse(df$Season == "Summer", 1, 0)
-df$Autumn <- ifelse(df$Season == "Autumn", 1, 0)
-df$Winter <- ifelse(df$Season == "Winter", 1, 0)
+df$Spring <- ifelse(df$Season == 1, 1, 0)
+df$Summer <- ifelse(df$Season == 2, 1, 0)
+df$Autumn <- ifelse(df$Season == 3, 1, 0)
+df$Winter <- ifelse(df$Season == 4, 1, 0)
 
 # Aggiungi una colonna binaria per il lockdown basata su date specifiche
 df$During_Lockdown <- ifelse(df$Lockdown >= as.Date("2020-03-09") & df$Lockdown <= as.Date("2020-05-03"), 1, 0)
@@ -83,3 +84,36 @@ plot(model_data$response, predictions, main = "Scatterplot previsions vs real va
 hist(model_data$response - predictions, main = "Error distribution",
      xlab = "Errors", col = "lightblue", border = "black")
 
+# Utilizza la funzione glmnet per la regressione LASSO
+# Converti il dataframe in una matrice
+x <- as.matrix(all_predictors)
+
+# Adatta il modello LASSO
+lasso_model <- cv.glmnet(x, model_data$response, alpha = 1)
+
+# Trova il valore di lambda ottimale
+lambda_min <- lasso_model$lambda.min
+
+# Seleziona le variabili con il lambda ottimale
+lasso_selected_variables <- coef(lasso_model, s = lambda_min)
+lasso_selected_variables <- lasso_selected_variables[-1]  # Rimuovi l'intercetta
+
+# Ottieni i nomi delle variabili selezionate
+selected_variable_names <- names(lasso_selected_variables)[lasso_selected_variables != 0]
+
+# Stampa le variabili selezionate
+cat("Variabili selezionate con LASSO regression:\n")
+print(selected_variable_names)
+
+# Crea un nuovo dataframe solo con le variabili selezionate
+lasso_model_data <- model_data[, c(selected_variable_names, "response")]
+
+# Fit del modello lineare con le sole variabili selezionate
+lasso_model_fit <- lm(response ~ ., data = as.data.frame(lasso_model_data))
+
+# Visualizza il riassunto del modello LASSO
+summary(lasso_model_fit)
+
+# Stampa le variabili selezionate con LASSO
+cat("Variabili selezionate con LASSO regression:\n")
+print(selected_variable_names)
