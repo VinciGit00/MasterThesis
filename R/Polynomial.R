@@ -1,3 +1,5 @@
+library(glmnet)
+
 # Set the working directory and read the data
 setwd("~/Github/MasterThesis/R")
 df <- read.csv("Agrimonia_scaled_Bertonico_for_interactions.csv")
@@ -54,6 +56,10 @@ for (i in non_zero_indices) {
   cat(sprintf("%s: %.4f\n", covariate_name, coef_value))
 }
 
+# Print the names of parameters included in Lasso model
+cat("\nNames of parameters included in Lasso model:\n")
+print(selected_covariates)
+
 # Make predictions using the selected covariates
 x_selected <- x_matrix[, non_zero_indices-1]
 lasso_predictions <- predict(poly_model, newdata = as.data.frame(x_selected))
@@ -66,3 +72,7 @@ lasso_rmse <- sqrt(mean(lasso_residuals^2))
 
 # Print the RMSE for Lasso model
 cat(sprintf("\nRoot Mean Squared Error (RMSE) for Lasso model: %.4f\n", lasso_rmse))
+
+# Print all the parameters of the Lasso model
+cat("\nParameters of the Lasso model:\n")
+print(lasso_model)

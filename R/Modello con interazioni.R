@@ -4,8 +4,8 @@ setwd("~/Github/MasterThesis/R")
 # Carica le librerie necessarie
 library(em)
 library(caret)
-library(e1071)  # Questa libreria contiene la funzione skewness
-library(moments)  # Questa libreria contiene la funzione kurtosis
+library(e1071)  
+library(moments)  
 library(glmnet)
 
 # Leggi il file CSV
