@@ -56,6 +56,19 @@ for (i in non_zero_indices) {
   cat(sprintf("%s: %.4f\n", covariate_name, coef_value))
 }
 
+cat("\nSelected covariates, their coefficients, and standard deviations:\n")
+if (length(non_zero_indices) > 0) {
+  for (i in non_zero_indices) {
+    coef_value <- selected_coefs[i]
+    coef_sd <- lasso_model$se[i]
+    covariate_name <- colnames(x_matrix)[i]
+    cat(sprintf("%s: Coefficient=%.4f, Standard deviation=%.4f\n", covariate_name, coef_value, coef_sd))
+  }
+} else {
+  cat("No non-zero coefficients selected.\n")
+}
+
+
 # Print the names of parameters included in Lasso model
 cat("\nNames of parameters included in Lasso model:\n")
 print(selected_covariates)

@@ -39,6 +39,13 @@ for (i in 1:length(coefficients)) {
   cat(sprintf("%s: %.4f\n", variable_names[i], coefficients[i]))
 }
 
+# Print coefficients and corresponding variable names for the best lambda (Ridge) along with standard deviation
+cat("Coefficients for the Best Lambda (Ridge):\n")
+for (i in 1:length(coefficients)) {
+  cat(sprintf("%s: %.4f, Standard Deviation: %.4f\n", variable_names[i], coefficients[i], standard_deviations[i]))
+}
+
+
 # Predict the response variable using the ridge model
 y_pred <- predict(ridge_model, newx = x_matrix, s = best_lambda)
 
@@ -51,13 +58,6 @@ hist(residuals, main = "Distribution of Residuals (Ridge)", xlab = "Residuals")
 # Print summary statistics of residuals (Ridge)
 cat("Summary Statistics of Residuals (Ridge):\n")
 summary(residuals)
-
-# Additional summary statistics of residuals (Ridge)
-#cat("\nAdditional Summary Statistics of Residuals (Ridge):\n")
-#cat(sprintf("Skewness: %.4f\n", skewness(residuals)))
-#cat(sprintf("Mean: %.4f\n", mean(residuals)))
-#cat(sprintf("Standard Deviation: %.4f\n", sd(residuals)))
-#cat(sprintf("Kurtosis: %.4f\n", kurtosis(residuals)))
 
 # Plot predicted vs. real values for ridge
 plot(y, y_pred, main = "Predicted vs. Real (Ridge)", xlab = "Real Values", ylab = "Predicted Values", pch = 16, col = "blue")
@@ -104,13 +104,6 @@ hist(residuals_lasso, main = "Distribution of Residuals (Lasso)", xlab = "Residu
 cat("Summary Statistics of Residuals (Lasso):\n")
 summary(residuals_lasso)
 
-# Additional summary statistics of residuals for lasso
-#cat("\nAdditional Summary Statistics of Residuals (Lasso):\n")
-#cat(sprintf("Skewness: %.4f\n", skewness(residuals_lasso)))
-#cat(sprintf("Mean: %.4f\n", mean(residuals_lasso)))
-#cat(sprintf("Standard Deviation: %.4f\n", sd(residuals_lasso)))
-#cat(sprintf("Kurtosis: %.4f\n", kurtosis(residuals_lasso)))
-
 # Plot predicted vs. real values for lasso
 plot(y, y_pred_lasso, main = "Predicted vs. Real (Lasso)", xlab = "Real Values", ylab = "Predicted Values", pch = 16, col = "blue")
 abline(0, 1, col = "red", lty = 2)
@@ -130,8 +123,10 @@ non_zero_indices <- which(coefficients_lasso != 0)
 non_zero_coefficients <- coefficients_lasso[non_zero_indices]
 non_zero_variable_names <- variable_names[non_zero_indices]
 
-cat("\nNon-zero Coefficients and Corresponding Variable Names for the Best Lambda (Lasso):\n")
-for (i in 1:length(non_zero_coefficients)) {
-  cat(sprintf("%s: %.4f\n", non_zero_variable_names[i], non_zero_coefficients[i]))
-}
+# Calculate standard deviation of each variable
+standard_deviations <- apply(subset, 2, sd)
 
+cat("\nCoefficients for the Best Lambda (Lasso):\n")
+for (i in 1:length(non_zero_coefficients)) {
+  cat(sprintf("%s: %.4f, Standard Deviation: %.4f\n", non_zero_variable_names[i], non_zero_coefficients[i], standard_deviations[i]))
+}

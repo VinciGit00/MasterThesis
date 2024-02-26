@@ -51,13 +51,14 @@ best_model <- glmnet(x_matrix, y, alpha = 1, lambda = cv_res$lambda.min)
 # Extract non-zero coefficients
 non_zero_coef <- coef(best_model)
 
-# Print variables of the best model
-cat("Variables in the best model:\n")
+# Print variables of the best model with their standard deviations
+cat("Variables in the best model with their standard deviations:\n")
 for (i in 1:length(non_zero_coef)) {
   if (non_zero_coef[i] != 0) {
     variable_name <- colnames(x_matrix)[i]
     coefficient <- non_zero_coef[i]
-    cat(sprintf("%s: %.4f\n", variable_name, coefficient))
+    std_dev <- sd(df[[variable_name]])
+    cat(sprintf("%s: %.4f (Standard Deviation: %.4f)\n", variable_name, coefficient, std_dev))
   }
 }
 
@@ -82,3 +83,9 @@ rmse <- sqrt(mean(residuals^2))
 
 # Print the RMSE
 cat(sprintf("\nRoot Mean Squared Error (RMSE): %.4f\n", rmse))
+
+# Calculate standard error
+standard_error <- sd(residuals) / sqrt(length(residuals))
+
+# Print standard error
+cat("Standard Error:", standard_error, "\n")
