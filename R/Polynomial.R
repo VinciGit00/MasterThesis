@@ -68,7 +68,6 @@ if (length(non_zero_indices) > 0) {
   cat("No non-zero coefficients selected.\n")
 }
 
-
 # Print the names of parameters included in Lasso model
 cat("\nNames of parameters included in Lasso model:\n")
 print(selected_covariates)
@@ -89,3 +88,8 @@ cat(sprintf("\nRoot Mean Squared Error (RMSE) for Lasso model: %.4f\n", lasso_rm
 # Print all the parameters of the Lasso model
 cat("\nParameters of the Lasso model:\n")
 print(lasso_model)
+
+# Calculate and print autocorrelation of residuals
+autocorr <- acf(lasso_residuals, plot = FALSE)$acf
+cat("\nAutocorrelation of residuals:\n")
+print(autocorr)

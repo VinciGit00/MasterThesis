@@ -89,3 +89,9 @@ standard_error <- sd(residuals) / sqrt(length(residuals))
 
 # Print standard error
 cat("Standard Error:", standard_error, "\n")
+
+# Calculate autocorrelation of residuals
+autocorrelation <- acf(residuals, plot = FALSE)$acf[2]
+
+# Print autocorrelation
+cat("Autocorrelation of Residuals:", autocorrelation, "\n")

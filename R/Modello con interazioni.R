@@ -20,8 +20,8 @@ df$Summer <- ifelse(df$Season == 2, 1, 0)
 df$Autumn <- ifelse(df$Season == 3, 1, 0)
 df$Winter <- ifelse(df$Season == 4, 1, 0)
 
-# Aggiungi una colonna binaria per il lockdown basata su date specifiche
-df$During_Lockdown <- ifelse(df$Lockdown >= as.Date("2020-03-09") & df$Lockdown <= as.Date("2020-05-03"), 1, 0)
+# Aggiungi una colonna binaria per il lockdown basata sugli indici di riga
+df$During_Lockdown <- ifelse(1:nrow(df) >= 1529 & 1:nrow(df) <= 1584, 1, 0)
 
 # Estrai le colonne rilevanti per il modello
 predictors <- df[, c("Spring", "Summer", "Autumn", "Winter", "During_Lockdown")]
@@ -66,6 +66,16 @@ cat("Media dei residui:", residuals_mean, "\n")
 cat("Skewness dei residui:", residuals_skewness, "\n")
 cat("Deviazione standard dei residui:", residuals_sd, "\n")
 cat("Kurtosis dei residui:", residuals_kurtosis, "\n")
+
+# Calcola l'autocorrelazione dei residui
+residuals_autocorrelation <- acf(residuals, plot = FALSE)
+
+# Estrai i valori di autocorrelazione
+autocorrelation_values <- residuals_autocorrelation$acf
+
+# Stampa i valori di autocorrelazione
+cat("Autocorrelazione dei residui:\n")
+print(autocorrelation_values)
 
 # Calcola le previsioni del modello
 predictions <- predict(model, newdata = model_data)
@@ -117,3 +127,5 @@ summary(lasso_model_fit)
 # Stampa le variabili selezionate con LASSO
 cat("Variabili selezionate con LASSO regression:\n")
 print(selected_variable_names)
+
+print(residuals_autocorrelation$acf)
