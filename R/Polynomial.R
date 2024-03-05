@@ -20,76 +20,32 @@ x_matrix <- as.matrix(subset)
 # Response variable
 y <- df$AQ_nh3
 
-# Fit a polynomial regression model
-degree <- 2  # You can change this to the desired degree of the polynomial
-poly_model <- lm(y ~ poly(x_matrix, degree, raw = TRUE), data = df)
-
-# Perform Lasso regression
-lasso_model <- cv.glmnet(x_matrix, y, alpha = 1)  # Use alpha = 1 for Lasso regression
-
-# Plot the cross-validated mean squared error (MSE) against lambda
-plot(lasso_model)
+# Fit a ridge regression model
+ridge_model <- cv.glmnet(x_matrix, y, alpha = 0)  # Use alpha = 0 for ridge regression
 
 # Select the best lambda value based on cross-validated MSE
-best_lambda <- lasso_model$lambda.min
+best_lambda_ridge <- ridge_model$lambda.min
 
-# Print the best lambda value
-cat(sprintf("\nBest lambda value: %.4f\n", best_lambda))
+# Get the coefficients of the selected ridge model
+selected_coefs_ridge <- coef(ridge_model, s = best_lambda_ridge)
 
-# Get the coefficients of the selected model
-selected_coefs <- coef(lasso_model, s = best_lambda)
+# Get the indices of non-zero coefficients for ridge
+non_zero_indices_ridge <- which(selected_coefs_ridge != 0)
 
-# Print the coefficients
-print(selected_coefs)
+# Extract the names of selected covariates for ridge
+selected_covariates_ridge <- colnames(x_matrix)[non_zero_indices_ridge]
 
-# Get the indices of non-zero coefficients
-non_zero_indices <- which(selected_coefs != 0)
+# Calculate the standard deviations of coefficients manually
+n <- nrow(x_matrix)
+residual_std_error <- sqrt(sum((predict(ridge_model, newx = x_matrix) - y)^2) / (n - length(non_zero_indices_ridge)))
+coefficients_sd <- residual_std_error / sqrt(n)
 
-# Extract the names of selected covariates
-selected_covariates <- colnames(x_matrix)[non_zero_indices]
+# Create a data frame to store coefficients and standard deviations
+coefficients_df <- data.frame(
+  Variable = selected_covariates_ridge,
+  Coefficient = selected_coefs_ridge[non_zero_indices_ridge],
+  Standard_Deviation = rep(coefficients_sd, length(non_zero_indices_ridge))
+)
 
-# Print the selected covariates and their coefficients
-cat("\nSelected covariates and their coefficients:\n")
-for (i in non_zero_indices) {
-  coef_value <- selected_coefs[i]
-  covariate_name <- colnames(x_matrix)[i]
-  cat(sprintf("%s: %.4f\n", covariate_name, coef_value))
-}
-
-cat("\nSelected covariates, their coefficients, and standard deviations:\n")
-if (length(non_zero_indices) > 0) {
-  for (i in non_zero_indices) {
-    coef_value <- selected_coefs[i]
-    coef_sd <- lasso_model$se[i]
-    covariate_name <- colnames(x_matrix)[i]
-    cat(sprintf("%s: Coefficient=%.4f, Standard deviation=%.4f\n", covariate_name, coef_value, coef_sd))
-  }
-} else {
-  cat("No non-zero coefficients selected.\n")
-}
-
-# Print the names of parameters included in Lasso model
-cat("\nNames of parameters included in Lasso model:\n")
-print(selected_covariates)
-
-# Make predictions using the selected covariates
-x_selected <- x_matrix[, non_zero_indices-1]
-lasso_predictions <- predict(poly_model, newdata = as.data.frame(x_selected))
-
-# Calculate residuals
-lasso_residuals <- y - lasso_predictions
-
-# Calculate Root Mean Squared Error (RMSE) for Lasso model
-lasso_rmse <- sqrt(mean(lasso_residuals^2))
-
-# Print the RMSE for Lasso model
-cat(sprintf("\nRoot Mean Squared Error (RMSE) for Lasso model: %.4f\n", lasso_rmse))
-
-# Print all the parameters of the Lasso model
-cat("\nParameters of the Lasso model:\n")
-print(lasso_model)
-
-# Calculate and print autocorrelation of residuals
-autocorr <- acf(lasso_residuals, plot = FALSE)$acf
-cat("\nAutocorrelation of residuals:\n")
-print(autocorr)
+# Print the table
+print(coefficients_df)

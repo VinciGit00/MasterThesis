@@ -111,9 +111,13 @@ lasso_selected_variables <- lasso_selected_variables[-1]  # Rimuovi l'intercetta
 # Ottieni i nomi delle variabili selezionate
 selected_variable_names <- names(lasso_selected_variables)[lasso_selected_variables != 0]
 
-# Stampa le variabili selezionate
-cat("Variabili selezionate con LASSO regression:\n")
+# Calcola le deviazioni standard delle variabili selezionate con LASSO
+lasso_selected_variables_sd <- predict(lasso_model, type = "nonzero", s = lambda_min)
+
+# Stampa le variabili selezionate con LASSO e le relative deviazioni standard
+cat("Variabili selezionate con LASSO regression e deviazioni standard:\n")
 print(selected_variable_names)
+print(lasso_selected_variables_sd)
 
 # Crea un nuovo dataframe solo con le variabili selezionate
 lasso_model_data <- model_data[, c(selected_variable_names, "response")]
@@ -128,4 +132,36 @@ summary(lasso_model_fit)
 cat("Variabili selezionate con LASSO regression:\n")
 print(selected_variable_names)
 
-print(residuals_autocorrelation$acf)
+# Utilizza la funzione glmnet per la regressione ridge
+ridge_model <- cv.glmnet(x, model_data$response, alpha = 0)
+
+# Trova il valore di lambda ottimale per la ridge regression
+lambda_min_ridge <- ridge_model$lambda.min
+
+# Seleziona le variabili con il lambda ottimale
+ridge_selected_variables <- coef(ridge_model, s = lambda_min_ridge)
+ridge_selected_variables <- ridge_selected_variables[-1]  # Rimuovi l'intercetta
+
+# Ottieni i nomi delle variabili selezionate
+selected_variable_names_ridge <- names(ridge_selected_variables)[ridge_selected_variables != 0]
+
+# Calcola le deviazioni standard delle variabili selezionate con la ridge regression
+ridge_selected_variables_sd <- predict(ridge_model, type = "nonzero", s = lambda_min_ridge)
+
+# Stampa le variabili selezionate con la ridge regression e le relative deviazioni standard
+cat("Variabili selezionate con ridge regression e deviazioni standard:\n")
+print(selected_variable_names_ridge)
+print(ridge_selected_variables_sd)
+
+# Crea un nuovo dataframe solo con le variabili selezionate
+ridge_model_data <- model_data[, c(selected_variable_names_ridge, "response")]
+
+# Fit del modello lineare con le sole variabili selezionate dalla ridge regression
+ridge_model_fit <- lm(response ~ ., data = as.data.frame(ridge_model_data))
+
+# Visualizza il riassunto del modello ridge
+summary(ridge_model_fit)
+
+# Stampa le variabili selezionate con ridge regression
+cat("Variabili selezionate con ridge regression:\n")
+print(selected_variable_names_ridge)
