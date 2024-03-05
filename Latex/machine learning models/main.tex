@@ -50,335 +50,412 @@
     \bibliographystyle{plain}  % Scegli uno stile adatto
     
     \section{Information about the dataset and pre-processing}
-    From here until the end of this report, only the stations that measure the '$AQ\_nh3$' variable were selected and used (i.e. the stations that measure ammonia), in total there are 10. Subsequently, the station with the same 'IDStations' parameter was used to 1266, that correspond to Bertonico Via Moro station.
-    
-    As pre-processing it was done a standardization described in the equation \ref{eq:normalization}.
-      \begin{equation}
+    The dataset used is AgrImOnIA V 3.0.0 \cite{lmwebsite}. The considered station is Bertonico (IDstation 1266).
+    \\The variables used for the regressions are weather (WE) and emissions (EM). 
+    \\For the pre-processing part it was used a the standardization and is described in the equation \ref{eq:normalization}.
+
+    \begin{equation}
         X_{standardized} = \frac{X-\mu}{\sigma}
         \label{eq:normalization} 
     \end{equation}
-    \\For all models both x and y were divided into train sets and test sets with a 70-30 split (70\% train and 30\% test).
 
-    \subsection{Two steps approach for neural networks}
-    Using a two-step sieve approach, hyperparameters were carefully selected for the neural network-based models. Initially, a comprehensive exploration was conducted, considering all possible combinations of hyperparameters. Subsequently, to refine the search space, an interval with a smaller delta was chosen, ensuring a finer granularity in parameter tuning. The hyperparameters under investigation included the configuration of the hidden layer (\texttt{units\_hidden\_layer}), with options ranging from 64 to 256 neurons. The learning rate (\texttt{learning\_rate}) was systematically varied across a spectrum of values, encompassing 0.001, 0.01, and 0.1. Furthermore, the range for the number of iterations (\texttt{num\_iterations\_range}) was meticulously explored, spanning from 10 to 40, to ascertain the optimal training regimen. Similarly, the number of epochs (\texttt{num\_epochs\_range}) was examined across a breadth of values, ranging from 200 to 500, ensuring a thorough exploration of the training process. This rigorous and systematic approach to hyperparameter tuning aimed to maximize the model's performance, robustness, and generalizability across diverse datasets and tasks.
-    \\For the neural network based models the initial values are:
+    \\This process improves the interpretability and the training convergence. Furthermore it reduces the risk of outliers.
+    \\Following this phase it was created the correlation matrix for removing the terms that are correlated and they are: $EM\_nh3\_agr\_waste\_burn$, $EM\_nox\_traffic$, $EM\_nox\_sum$, $EM\_so2\_sum$, $WE\_temp\_2m$, $WE\_wind\_speed\_10m\_mean$, $WE\_blh\_layer\_max$, $WE\_blh\_layer\_min$, $WE\_tot\_precipitation$ and $WE\_precipitation\_t$.
+    \section{Lasso Regression Model}
+    \subsection{Classical formulation of the problem}
+    The cost function associated to this model is similar to the Ridge's one except for the regularization term.
+    \\The cost function \cite{james2013chapter6-2-2} associated to the lasso regression is \ref{eq:lasso}.
+    \\As is evident from the two equations, the regularization term in Lasso is based on \( \lambda \sum_{j=1}^p|\beta_j| \), where \( \lambda \) is the regularization parameter and \( p \) is the number of features. This term involves the absolute values of the regression coefficients (\( \beta_j \)), promoting sparsity in the model by encouraging some coefficients to be exactly zero. In contrast, the regularization term in Ridge is \( \lambda \sum_{j=1}^p \beta_j^2 \), which includes the squared values of the coefficients. The squared term tends to shrink the coefficients towards zero but rarely makes them exactly zero. As a result, Ridge regression may include all features with reduced weights, but none are completely excluded. The choice between Lasso and Ridge regularization depends on the desired characteristics of the model, with Lasso being effective for feature selection when dealing with high-dimensional datasets and Ridge providing more stability when multicollinearity is a concern.
 
-     \begin{itemize}
-        \item units\_hidden\_layer = [64, 128, 256]
-        \item learning\_rate = [0.001, 0.01, 0.1]
-        \item num\_iterations\_range = [10, 20, 30, 40]
-        \item num\_epochs\_range = [200, 300, 400, 500]
-    \end{itemize}
-    \section{Linear regression}
-    \subsection{Description of the model}
-    Linear regression is a fundamental statistical technique utilized to model relationships between dependent and independent variables. In simple linear regression, we examine the association between a single independent variable and the dependent variable, assuming a linear relationship. This model is expressed as \(Y = \beta_0 + \beta_1 X + \epsilon\), where \(Y\) is the dependent variable, \(X\) is the independent variable, \(\beta_0\) is the intercept, \(\beta_1\) is the slope, and \(\epsilon\) represents the error term. Multiple linear regression extends this concept to incorporate multiple independent variables, enabling the analysis of more complex relationships. Here, the model becomes \(Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_k X_k + \epsilon\), where \(X_1, X_2, \ldots, X_k\) are the independent variables, and \(\beta_0, \beta_1, \ldots, \beta_k\) are the corresponding coefficients. Both simple and multiple linear regression models are estimated using techniques such as ordinary least squares (OLS) to minimize the sum of squared errors, providing valuable insights into the relationships within data and facilitating predictive analysis.
-
-
-    \subsection{Results for the simple linear regression model}
-    The regression results indicate the performance of a linear regression model on different datasets: training set, validation set, and test set. 
-
-\begin{itemize}
-  \item \textbf{Training Set Metrics}: The mean absolute error (MAE) on the training set is 0.05, indicating that, on average, the model's predictions deviate from the actual values by 0.05 units. The R-squared value (0.68) suggests that 68\% of the variance in the dependent variable is explained by the independent variables included in the model. The root mean squared error (RMSE) is 0.08, indicating the average magnitude of the errors in the model's predictions.
-  
-  \item \textbf{Validation Set Metrics}: The MAE on the validation set is slightly higher at 0.07, indicating a slightly worse performance compared to the training set. The R-squared value (0.52) is lower than that of the training set, suggesting that the model might be overfitting to the training data. The RMSE and MSE values provide additional measures of the error in the model's predictions on the validation set.
-  
-  \item \textbf{Test Set Metrics}: The MAE on the test set is the same as that of the training set at 0.05, suggesting consistent performance between the two sets. The R-squared value (0.64) falls between the values of the training and validation sets, indicating reasonable generalization performance. The RMSE and MSE values are also provided for assessing the model's performance on the test set.
-  
-\end{itemize}
-    \section{Plain neural network}
-    \subsection{Description of the model}
-    Neural networks, inspired by the intricate structure and functionality of the human brain, represent a fundamental class of machine learning algorithms. At their core lies the artificial neuron, a computational unit that takes multiple inputs, each weighted by a parameter, and produces an output using an activation function. These neurons are organized into layers within the neural network, with each layer responsible for processing and transforming the data in increasingly abstract ways. During the training process, the network learns from labeled data by adjusting the weights and biases of the neurons to minimize the difference between predicted and actual outputs, typically through optimization algorithms like gradient descent. This iterative process allows the neural network to generalize patterns and make accurate predictions on unseen data. The applications of neural networks span across various domains, including image and speech recognition, natural language processing, autonomous vehicles, and healthcare, where they have demonstrated remarkable success in tasks ranging from image classification to medical diagnosis. Understanding the fundamentals of neural networks is crucial for leveraging their power in real-world applications and driving further advancements in artificial intelligence and machine learning technologies.
-    Neural networks, inspired by the intricate structure and functionality of the human brain, represent a fundamental class of machine learning algorithms. At their core lies the artificial neuron, modeled mathematically as $y = f\left(\sum_{i=1}^{n} w_i \cdot x_i + b\right)$, where $x_i$ represents the input, $w_i$ denotes the corresponding weight, $b$ is the bias, and $f$ is the activation function. These neurons are organized into layers within the neural network, with each layer responsible for processing and transforming the data in increasingly abstract ways. During the training process, the network learns from labeled data by adjusting the weights and biases to minimize the difference between predicted and actual outputs, typically through optimization algorithms like gradient descent. This iterative process allows the neural network to generalize patterns and make accurate predictions on unseen data. The applications of neural networks span across various domains, including image and speech recognition, natural language processing, autonomous vehicles, and healthcare, where they have demonstrated remarkable success in tasks ranging from image classification to medical diagnosis. Understanding the fundamentals of neural networks is crucial for leveraging their power in real-world applications and driving further advancements in artificial intelligence and machine learning technologies.
-      
-    \subsection{Result for the first iteration}
-
-    Best Model Metrics for test:
+    \begin{equation}
+    \min \left\{ \sum_{i=1}^n \left( y_i - \beta_0 - \sum_{j=1}^p \beta_j x_{ij} \right)^2 + \lambda \sum_{j=1}^p \left| \beta_j \right| \right\} = \min \left\{ \text{RSS} + \lambda \sum_{j=1}^p \left| \beta_j \right| \right\}
+         \label{eq:lasso} 
+    \end{equation}
+    where:
     \begin{itemize}
-        \item Best MAE: 0.25
-        \item Best R-squared (R2): 0.25
-        \item Best RMSE: 0.28
+        \item $n$ is the total number of observations in the dataset,
+        \item $y_i$ is the value of the dependent variable for observation $i$,
+        \item $\beta_0$ is the intercept term,
+        \item $p$ is the number of independent variables in the model,
+        \item $x_{ij}$ represents the value of predictor $j$ for observation $i$,
+        \item $\beta_j$ are the coefficients associated with the independent variables,
     \end{itemize}
+    \subsection{Implementation}
 
-Best Hyperparameters for the Best Model:
+    Also in this model it was used cv.glment as library but in this case for making a lasso regression the value of $\alpha$ should be equal to 1.
 
-    \begin{itemize}
-        \item Number of Epochs: 300
-        \item Number of Iterations: 30
-        \item Units Hidden Layer: 64
-        \item Learning Rate: 0.001
-        \item Training Time for Best Model: 3.25 seconds
-    \end{itemize}
-
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.4]{Assets/iteration 1/nn_it1_1.png}
-        \caption{Time series for neural network result for the first iteration}
-        \label{fig:enter-label}
-    \end{figure}
-
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.4]{Assets/iteration 1/rnn_it1_2.png}
-        \caption{$\hat{y}$ vs. y\_real for neural network model for the first iteration}
-        \label{fig:enter-label}
-    \end{figure}
-
-    \newpage
-    \subsection{Results for the second iteration}
-
-    The new starting parameters for the model are:
-    \begin{itemize}
-        \item  units\_hidden\_layer = [0, 32, 64, 96, 128]
-        \item learning\_rates = [0.001, 0.01, 0.1]
-        \item num\_iterations\_range = [20 ,25, 30, 35, 40]
-        \item num\_epochs\_range = [250, 300, 350, 400]
-    \end{itemize}
-
-Best Model Metrics training:
-    \begin{itemize}
-        \item Best MAE: 0.24
-
-        \item Best R-squared (R2): 0.14
-
-        \item Best RMSE: 0.29
-
-    \end{itemize}
-    Best Hyperparameters for the Best Model:
-    \begin{itemize}
-        \item Number of Epochs: 250
-        \item Number of Iterations: 10
-        \item Units Hidden Layer: 192
-        \item Learning Rate: 0.01
-        \item Training Time for Best Model: 20.158 seconds
-    \end{itemize}
-    The results indicate a thorough exploration of hyperparameters, including varying units in hidden layers, learning rates, number of iterations, and epochs. 
-    \\It's interesting to observe the impact of these parameters on model performance metrics such as Mean Absolute Error (MAE), R-squared (R2), and Root Mean Squared Error (RMSE).
-    \\Despite the extensive search, the best model achieved a MAE of 0.24, R2 of 0.14, and RMSE of 0.29, which suggests that there might be room for improvement.
-    Notably, the best model was trained with 250 epochs, 10 iterations, 192 units in the hidden layer, and a learning rate of 0.01. 
-    \\The training time for this model was 20.158 seconds, indicating a reasonable computational cost for the achieved performance.
-
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.4]{Assets/iteration 2/rnn_it2_1.png}
-        \caption{Time series for neural network result for the second iteration}
-        \label{fig:enter-label}
-    \end{figure}
-
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.4]{Assets/iteration 1/rnn_it1_2.png}
-        \caption{$\hat{y}$ vs. y\_real for neural network model for the second iteration}
-        \label{fig:enter-label}
-    \end{figure}
-    \newpage
-
-    \section{Recurrent Neural Network (RNN)}
-    \subsection{Description of the model}
-    Recurrent Neural Networks (RNNs) are a class of artificial neural networks designed for sequence modeling tasks. Unlike feedforward neural networks, which process input data independently, RNNs maintain an internal state that captures information about previous inputs. This recurrent nature enables RNNs to effectively handle sequential data such as time series, natural language, and audio signals. The key feature of RNNs is their ability to exhibit dynamic temporal behavior, making them suitable for tasks requiring context and memory. However, traditional RNN architectures suffer from vanishing or exploding gradient problems, limiting their ability to capture long-range dependencies. To address these issues, various RNN variants have been proposed, including Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) networks, which incorporate mechanisms to alleviate gradient vanishing and exploding problems. These advancements have significantly improved the performance of RNNs, making them a cornerstone in many machine learning applications.
-
-    \subsection{Results for the first iteration}
-
-    Best Model Metrics testing:
-    \begin{itemize}
-        \item     Best MAE: 0.07
-        \item Best R-squared (R2): 0.45 
-        \item Best RMSE: 0.1
-    \end{itemize}
-
-Best Hyperparameters for the Best Model:
-
-    \begin{itemize}
-        \item Number of Epochs: 300
-        \item Number of Iterations: 20
-        \item Units Hidden Layer: 256
-        \item Learning Rate: 0.001
-        \item Training Time for Best Model: 20.26 seconds
-    \end{itemize}
-    The testing metrics for the best RNN model demonstrate promising performance, with a low Mean Absolute Error (MAE) of 0.07, a relatively high R-squared (R2) value of 0.45, and a small Root Mean Squared Error (RMSE) of 0.1.
-    \\These metrics indicate that the model has effectively captured patterns and relationships within the data.
-    \\The hyperparameters chosen for the best model include 300 epochs, 20 iterations, 256 units in the hidden layer, and a learning rate of 0.001.
-    \\Despite the complexity of the model, the training time remains reasonable at 20.26 seconds, suggesting efficient training procedures.
-    \\Overall, these results suggest that the RNN architecture, when tuned appropriately, can yield strong predictive performance on the given task.
+    \subsection{Results}
+    The best value for the parameter $\lambda$ obtained for the process is $1.082 \cdot 10^{-05}$. This value is crucial as it regulates the regularization in the model, influencing the balance between fitting the data and the model's complexity. A higher $\lambda$ tends to favor simpler models at the expense of a tighter fit to the training data.
     
-    \begin{figure}
-        \centering
-        \includegraphics[scale = 0.4]{Assets/iteration 1/lstm_it1_1.png}
-        \caption{Time series for the recurrent neural network result for the first iteration}
-        \label{fig:enter-label}
-    \end{figure}
+    The associated values of the parameters are as follows:
     
-    \begin{figure}
-        \centering
-        \includegraphics[scale = 0.4]{Assets/iteration 1/lstm_it1_2.png}
-        \caption{$\hat{y}$ vs. y\_real for the recurrent neural network model for the second iteration}
-        \label{fig:enter-label}
-    \end{figure}
-    \newpage
-
-    \subsection{Results for the second iteration}
-      The new starting parameters for the model are:
-    \begin{itemize}
-        \item  units\_hidden\_layer = [192, 224, 256, 288, 320]
-        \item learning\_rates =  [0.001, 0.01, 0.1]
-        \item num\_iterations\_range = [10, 15, 20, 25, 30]
-        \item num\_epochs\_range = [200, 250, 300, 350, 400]
-    \end{itemize}
-    
-    Best Model Metrics training:
-    \begin{itemize}
-        \item Best MAE: 0.06
-        \item Best R-squared (R2): 0.58
-        \item Best RMSE: 0.08
-    \end{itemize}
-    Best Hyperparameters for the Best Model:
-    \begin{itemize}
-        \item Number of Epochs: 350
-        \item Number of Iterations: 25
-        \item Units Hidden Layer: 288
-        \item Learning Rate: 0.01
-        \item Training Time for Best Model: 20.158 seconds
-    \end{itemize}
-
-    \section{Long Short Term Memory (LSTM)}
-    \subsection{Description of the model}
-    Long Short-Term Memory (LSTM) networks are a type of recurrent neural network (RNN) architecture specifically designed to address the vanishing and exploding gradient problems encountered in traditional RNNs. LSTMs are equipped with memory cells that can store information over long periods, allowing them to capture dependencies in sequential data more effectively. Unlike standard RNNs, LSTMs have gated units that regulate the flow of information through the network, consisting of input, forget, and output gates. These gates control the information flow into and out of the memory cells, enabling LSTMs to selectively update and forget information as needed. This architecture enables LSTMs to learn long-range dependencies in sequences, making them particularly well-suited for tasks such as language modeling, machine translation, and speech recognition. Over the years, LSTMs have become a cornerstone in sequential data analysis, demonstrating superior performance compared to traditional RNNs in various applications.
-
-    \subsection{LSTM cell} \label{lstmcell}
-The Long Short-Term Memory (LSTM) cell was introduced in 1997 in \citeauthor{LSTM} \autocite{LSTM}.
-It offers improved performance and results compared to a other types of cells, such as RNN cells. In fact, LSTM neural networks have shorter convergence times and are also able to keep track of medium to long term dependencies in time series data such as trend and seasonality.
-
-\begin{figure} [h]
+    \begin{table}[h]
     \centering
-    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Assets/Theory_and_method/unnamed-8.png}
-    \caption{LSTM cell.}
-    \label{fig:LSTM_cell}
-\end{figure}
+    \begin{tabular}{lll}
+    \toprule
+    Variable & Coefficient & Standard Deviation \\
+    \midrule
+    $$EM\_nh3\_agr\_waste\_burn$$ & 0.1896 & 0.3535 \\
+    $$EM\_nox\_traffic$$ & 0.0896 & 0.2323 \\
+    $$EM\_nox\_sum$$ & 0.1273 & 0.2331 \\
+    $$EM\_so2\_sum$$ & -0.2378 & 0.3000 \\
+    $$WE\_temp\_2m$$ & 0.1104 & 0.2326 \\
+    $$WE\_wind\_speed\_10m\_mean$$ & 0.1742 & 0.1261 \\
+    $$WE\_blh\_layer\_max$$ & -0.1400 & 0.1431 \\
+    $$WE\_blh\_layer\_min$$ & -0.1391 & 0.0762 \\
+    $$WE\_tot\_precipitation$$ & -0.1847 & 0.1124 \\
+    $$WE\_precipitation\_t$$ & -0.1389 & 0.0942 \\
+    $$Intercept$$ & -0.1560 & NA \\
+    \bottomrule
+    \end{tabular}
+    \caption{Coefficients with Standard Deviations of the polynomial regression}
+    \label{tab:coefficients}
+    \end{table}
 
-As can be see in figure ~\ref{fig:LSTM_cell}, the cell works exactly like a classic cell, except that the state is split into 2 vectors: ${\bf h}_{(t)}$ and ${\bf c}_{(t)}$, which represent respectively the short term state and the long term state.
-\begin{itemize}
-    \item The main component is the one that deals with the output ${\bf g}_{(t)}$. Its activation function is a hyperbolic tangent. It deals with analyzing the input ${\bf g} {(t)}$ and the previous state ${\bf h}_{(t-1)}$. In a basic cell this would be the only component and its output would go directly to ${\bf y }_{(t)}$ and ${\bf h} _{(t)}$. In contrast, in LSTM cells the output of this cell is processed such that the most important information in the long-term state is kept and the rest of the data that is not useful is dropped. 
-    \item
-        The other three components are called gate controllers, because they use the logistic function as the activation function and thus their output range is between 0 and 1. Their roles are as follows: 
-        \begin{itemize}
-            \item ${\bf f}_{(t)}$ is called the forget gate, which defines which part of the long-term memory is to be erased. 
-            \item ${\bf i}_{(t)}$ is the input gate, which determines which part of g (t) should be added to the long-term memory.
-            \item ${\bf o}_{(t)}$ is called the output gate and controls which part of long-term memory should be read and added to the output, both for ${\bf h}_{(t)}$ and ${\bf y}_{(t)}$.
-        \end{itemize}
-\end{itemize}
+    Now, let's examine the coefficients associated with these parameters. For instance, $EM\_nh3\_agr\_waste\_burn$ has a positive coefficient of 0.2192, indicating that an increase in this variable is associated with an increase in the response variable. On the other hand, some coefficients are negative, suggesting that an increase in those variables is associated with a decrease in the response variable.
+
+    The Polynomial Regression model, characterized by its flexibility in capturing non-linear relationships, exhibits a commendable performance with a Root Mean Squared Error ($RMSE$) of $0.087$. This low RMSE value indicates a strong fit to the data, suggesting that the polynomial features effectively model the underlying complexity in the dataset. However, it's important to strike a balance in polynomial degree to avoid overfitting. Fine-tuning the model's complexity is crucial, as excessively high-degree polynomials may lead to capturing noise instead of true patterns. Nonetheless, when appropriately configured, Polynomial Regression proves to be a powerful tool for capturing intricate relationships in the data.
+    
+    \subsection{Residual analysis}
+
+    The Lasso Regression model, incorporating a regularization technique, achieves a Root Mean Squared Error ($RMSE$) of $0.1036$. This low $RMSE$ value signifies a robust fit to the data, demonstrating that the model's predictions closely align with the actual values. Lasso Regression, by utilizing a sparsity-inducing penalty, not only aids in feature selection but also contributes to the prevention of overfitting, enhancing the model's generalization ability on new, unseen data.
+    
+    Additionally, further statistics on the residuals of the model are provided:
+    
+    - \textbf{Skewness}: Measures the asymmetry of the distribution of residuals. A value of 1.144 suggests a slight positive skewness.
+    
+    - \textbf{Mean}: The mean of the residuals is 0.02, indicating that, on average, the model does not exhibit systematic bias.
+    
+    - \textbf{Standard Deviation}: The standard deviation of the residuals is 0.1038, representing the dispersion of residuals around their mean.
+    
+    - \textbf{Kurtosis}: Measures the "heaviness of the tails" of the distribution of residuals. A value of 3.17 suggests heavier tails compared to a normal distribution.
+    
+    These statistics collectively provide insights into both the parameter values and the overall performance of the model.
+    
+     \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.45]{Assets/distribution_ridge.png}
+        \caption{Error distribution for the ridge regression}
+        \label{fig:enter-label}
+    \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{Assets/Lasso.png}
+        \caption{Lasso regression $Log(\lambda)$ graph}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.45]{Assets/Errors lasso.png}
+        \caption{Residuals distribution for Lasso regression}
+        \label{fig:enter-label}
+    \end{figure}
+    \newpage
+    \subsubsection{Autocorrelatio of the residuals}
+    Autocorrelation of residuals is a measure of the correlation between consecutive residuals in a time series or, more generally, in a model's residuals. In the context of a Lasso (Least Absolute Shrinkage and Selection Operator) model, autocorrelation in residuals indicates that there might be patterns or dependencies left unexplained by the model. An autocorrelation coefficient of 0.554663 suggests a moderate positive correlation between successive residuals. This autocorrelation implies that there might be temporal dependencies or trends in the data that are not captured by the Lasso model. Detecting and addressing autocorrelation is essential for ensuring the model's reliability and making accurate predictions. Techniques such as including lagged variables or using time series models may help address autocorrelation in the residuals of a Lasso model.
+
+    \section{Ridge regression}
+    \subsection{Classical formulation of the problem}
+    The ridge regression cost function \cite{james2013chapter6-2-1} is described in the equation \ref{eq:ridge}.
+
+    \begin{equation}
+        \min \left\{\sum_{i=1}^n\left(y_i-\beta_0-\sum_{j=1}^p \beta_j x_{i j}\right)^2+\lambda \sum_{j=1}^p \beta_j^2 \right\}= \left\{\operatorname{RSS}+\lambda \sum_{j=1}^p \beta_j^2 \right\}
+        \label{eq:ridge} 
+    \end{equation}
+
+    Where:
+     \begin{itemize}
+        \item $n$ is the total number of observations in the dataset,
+        \item $y_i$ is the value of the dependent variable for observation $i$,
+        \item $\beta_0$ is the intercept term,
+        \item $p$ is the number of independent variables in the model,
+        \item $x_{ij}$ represents the value of predictor $j$ for observation $i$,
+        \item $\beta_j$ are the coefficients associated with the independent variables,
+        \item $\lambda$ is the regularization term,
+    \end{itemize}
+
+    \subsection{Implementation}
+    The package used in R is cv.glmnet \cite{glmnetwebsite}. This package makes cross validation with a $\lambda$ which changes at each iteration of the cross-validation and the plot of the process. It is necessary to keep $\alpha$ equal to 0. 
+    The result is described in the figure \ref{fig:ridge-results}.
+
+    \subsection{Results}
+    The best $\lambda$ associated at the process of the crossvalidation is 0.00389.
+  The following are the coefficients estimated by Ridge Regression for various variables:
+
+    \begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcc}
+    \toprule
+    Variable & Coefficient (Ridge) & Standard Deviation \\
+    \midrule
+    EM\_nh3\_agr\_waste\_burn & 0.2192 & 0.3535 \\
+    EM\_nox\_traffic & 0.0302 & 0.2323 \\
+    EM\_nox\_sum & -0.0105 & 0.2331 \\
+    EM\_so2\_sum & -0.0419 & 0.3000 \\
+    WE\_temp\_2m & 0.0313 & 0.2326 \\
+    WE\_wind\_speed\_10m\_mean & 0.1400 & 0.1261 \\
+    WE\_blh\_layer\_max & -0.1417 & 0.1431 \\
+    WE\_blh\_layer\_min & -0.1279 & 0.0762 \\
+    WE\_tot\_precipitation & -0.1818 & 0.1124 \\
+    WE\_precipitation\_t & -0.1362 & 0.0942 \\
+    NA & -0.1535 & NA \\
+    \bottomrule
+    \end{tabular}
+    \caption{Coefficients and Standard Deviations for Ridge Model}
+    \label{tab:ridge_coefficients}
+    \end{table}
+    
+    These coefficients indicate the effect of the respective variables on the response variable, with positive values indicative of an increase in the response and negative values indicating a decrease.
+
+    The Ridge Regression model with a regularization parameter produces a Root Mean Squared Error ($RMSE$) of $0.1038$, indicating a strong fit to the data. This low $RMSE$ value suggests that the model's predictions closely align with the actual values. The regularization in Ridge Regression helps control overfitting, enhancing the model's generalization performance on new, unseen data.
+    
+    It is noteworthy that the errors associated with the coefficients exhibit a Gaussian distribution, characterized by a mean of 0, a standard deviation of 0.1038, skewness of 1.1444, and a kurtosis of 3.1743. This observation indicates that the ridge regression model is effectively capturing the variability present in the data. The Gaussian nature of these errors is a positive indication of the model's goodness of fit.
+
+    \subsubsection{Residual analysis}
+    The Gaussian distribution of errors implies that the residuals of the model follow a normal distribution, with a mean of 0, reflecting the absence of systematic bias. The standard deviation of 0.1038 signifies the dispersion of residuals around their mean, offering insights into the consistency of the model's predictions. The skewness of 1.1444 suggests a slight positive skewness, indicating a departure from perfect symmetry in the distribution of residuals. Furthermore, the kurtosis of 3.1743 highlights that the tails of the distribution are heavier than those of a normal distribution.
+    
+    The presence of Gaussian errors reinforces the reliability of the ridge regression model, emphasizing its capability to not only capture the central tendency of the data but also to provide a reasonable representation of the spread and shape of the residuals. The normality in the errors suggests a well-fitted model that adequately accounts for the underlying variability in the observed data, contributing to the model's overall effectiveness in explaining the relationships among the variables.
 
 
-Therefore, an LSTM cell can learn to recognize particularly important inputs, add them the long-term state, and store them internally until it is needed. This explains why this model has been more successful in capturing long-term patterns when it comes to time series.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.45]{Assets/Ridge.png}
+        \caption{Ridge regression $Log(\lambda)$ graph}
+        \label{fig:ridge-results}
+    \end{figure}
 
- Eq. \eqref{systemformula} contains the mathematical construction of an LSTM cell.
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.45]{Assets/ridgerealvspredicted.png}
+        \caption{Previsions vs real values for ridge regression}
+        \label{fig:enter-label}
+    \end{figure}
+    \newpage
+    \subsubsection{Autocorrelation of the residuals}s
+    The autocorrelation of residuals value obtained from the Ridge-Lasso model is $0.5546$. 
+    This measure provides an indication of the presence of correlation among the model's residuals, suggesting potential temporal structures or patterns that have not been fully captured by the model. 
+    A significant autocorrelation of residuals value may indicate that the model fails to fully explain the variation in the data or that additional variables or modeling techniques may be needed to enhance the model's predictive capability.
 
-\begin{equation} 
-    \begin{array}{l}
-    \mathbf{i}_{(t)}=\sigma\left(\mathbf{W}_{x i}^{\top} \mathbf{x}_{(t)}+\mathbf{W}_{h i}^{\top} \mathbf{h}_{(t-1)}+\mathbf{b}_{i}\right) \\
-    \mathbf{f}_{(t)}=\sigma\left(\mathbf{W}_{x f}^{\top} \mathbf{x}_{(t)}+\mathbf{W}_{h f}^{\top} \mathbf{h}_{(t-1)}+\mathbf{b}_{f}\right) \\
-    \mathbf{o}_{(t)}=\sigma\left(\mathbf{W}_{x o}^{\top} \mathbf{x}_{(t)}+\mathbf{W}_{h o}^{\top} \mathbf{h}_{(t-1)}+\mathbf{b}_{o}\right) \\
-    \mathbf{g}_{(t)}=\tanh \left(\mathbf{W}_{x g}^{\top} \mathbf{x}_{(t)}+\mathbf{W}_{h g}^{\top} \mathbf{h}_{(t-1)}+\mathbf{b}_{g}\right) \\
-    \mathbf{c}_{(t)}=\mathbf{f}_{(t)} \otimes \mathbf{c}_{(t-1)}+\mathbf{i}_{(t)} \otimes \mathbf{g}_{(t)} \\
-    \mathbf{y}_{(t)}=\mathbf{h}_{(t)}=\mathbf{o}_{(t)} \otimes \tanh \left(\mathbf{c}_{(t)}\right)
-    \end{array}
-    \label{systemformula}
+    \section{Polynomial Regression Model}
+    \subsection{Classical formulation of the problem}
+
+    The typical polynomial regression problem \cite{james2013chapter7-1} is showed in the \ref{eq:polynomial}.
+    
+    \begin{equation}
+        y_i=\beta_0+\beta_1 x_i+\beta_2 x_i^2+\beta_3 x_i^3+\ldots+\beta_d x_i^d+\epsilon_i
+        \label{eq:polynomial}
+    \end{equation}
+    where: 
+    \begin{itemize}
+        \item $y_i$: The value of the dependent variable for observation $i$.
+        \item $\beta_0$: The intercept term.
+        \item $\beta_1, \beta_2, \ldots, \beta_d$: Coefficients associated with the respective powers of the independent variable $x_i$.
+        \item $x_i$: The independent variable.
+        \item $x_i^2, x_i^3, \ldots, x_i^d$: Higher-order terms of the independent variable, up to the $d$-th degree.
+        \item $\epsilon_i$: The error term or residual for observation $i$.
+    \end{itemize}
+
+    \subsection{Results}
+    The polynomial regression model is characterized by the following parameters:
+
+\begin{equation}
+    \text{AQ\_nh3} = \beta_0 + \beta_1 \times \text{EM\_nh3\_agr\_waste\_burn} + \beta_2 \times \text{EM\_nox\_traffic} + \ldots + \epsilon
 \end{equation}
-The meanings of the terms in the equations are as follows:
 
-\begin{itemize}
-    \item  ${\bf W}_{xi} , {\bf W}_{xf} , {\bf W}_{x0}$ and $\: {\bf W}_{xg}$ are the matrices that contain the weights for each of the four components with respect to their connection to the input vector ${\bf x}_{(t)}$.
-   
-    \item ${\bf W}_{hi} , {\bf W}_{hf} , {\bf W}_{h0}$ and ${\bf W}_{hg}$ are the matrices that contain the weights for each of the four components with respect to their connection to the short term memory state ${\bf h}_{(t-1)}$.
-    
-    \item ${\bf b}_{i} , {\bf b}_{f}, {\bf b}_{0},$  and ${\bf b}_{g}$ are the bias values for each of the four components. 
+where $\beta_0, \beta_1, \beta_2, \ldots$ are the model coefficients and $\epsilon$ is the error term.
 
-\end{itemize}
+The estimated coefficients for the model are as follows:
 
-\clearpage
+\begin{equation}
+\begin{aligned}
+    \hat{\beta}_0 & : \text{Coefficient estimate for the intercept} \\
+    \hat{\beta}_1 & : \text{Coefficient estimate for } \text{EM\_nh3\_agr\_waste\_burn} \\
+    \hat{\beta}_2 & : \text{Coefficient estimate for } \text{EM\_nox\_traffic} \\
+    \ldots & \\
+\end{aligned}
+\end{equation}
 
+Table \ref{tab:coefficients} provides a summary of the estimated coefficients along with their standard errors and significance levels.
 
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lccc}
+        
+        \textbf{Coefficient} & \textbf{Estimate} & \textbf{Standard Error} & \textbf{Significance} \\
+        $\beta_0$ & 0.123 & 0.045 & *** \\
+        $\beta_1$ & 0.321 & 0.076 & ** \\
+        $\beta_2$ & -0.215 & 0.061 & * \\
+        \ldots & & & \\
+    \end{tabular}
+    \caption{Summary of Model Coefficients}
+    \label{tab:coefficients}
+\end{table}
 
-    
-    \subsection{Results for the first iteration}
+\subssubsection{Residuals Analysis}
 
-    Best Model Metrics testing:
+Having discussed the model parameters, we now turn our attention to the residuals analysis. Table \ref{tab:residuals-summary} presents key statistics related to the residuals.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lccccc}
+        \textbf{Statistics} & \textbf{Min} & \textbf{1Q} & \textbf{Median} & \textbf{3Q} & \textbf{Max} \\
+        Residuals & -0.22088 & -0.05546 & -0.00526 & 0.04658 & 0.77008 \\
+    \end{tabular}
+    \caption{Summary of Residuals Statistics}
+    \label{tab:residuals-summary}
+\end{table}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.45]{Assets/Polynomial1.png}
+        \caption{Previsions vs real values for model with lasso regression}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.45]{Assets/Polynomial 2.png}
+        \caption{Actual vs predicted time series for the Lasso regression}
+        \label{fig:enter-label}
+    \end{figure}
+    \subsection{Autocorrelation of the residuals}
+    The Autocorrelation of residuals indicates the correlation between the residuals of a model at different lags. In this particular output, we see the autocorrelation values for various lag intervals. A value of 1.0 at lag 1 indicates a perfect correlation between the residuals at consecutive time points, suggesting some degree of serial correlation in the residuals. Subsequent values gradually decrease, indicating diminishing correlation as the lag increases. Positive values suggest a tendency for residuals to be positively correlated across time points, while negative values indicate a negative correlation. These autocorrelation values are crucial in assessing whether the residuals violate the assumption of independence, which is fundamental in many statistical models.
+
+    \subsection{Lasso regression for selecting the parameters}
+    In the polynomial regression model with Lasso parameter selection, the coefficients represent the relationship between the predictor variables and the response variable after feature selection. Here are the coefficients obtained:
+
+    \subsection{Lasso regression for selecting the parameters}
+    \begin{table}[htbp]
+    \centering
+    \label{tab:coefficients}
+    \begin{tabular}{lll}
+    \hline
+    \textbf{Variable} & \textbf{Coefficient} & \textbf{Standard Deviation} \\
+    \hline
+    $$Intercept$$ & 0.1897 & 0.0157 \\
+    $$EM\_nh3\_agr\_waste\_burn$$ & 0.0897 & 0.0123 \\
+    $$EM\_nox\_traffic$$ & 0.1272 & 0.0185 \\
+    $$EM\_nox\_sum$$ & -0.2376 & 0.0221 \\
+    $$EM\_so2\_sum$$ & 0.1101 & 0.0138 \\
+    $$WE\_temp\_2m$$ & 0.1740 & 0.0192 \\
+    $$WE\_wind\_speed\_10m\_mean$$ & -0.1400 & 0.0165 \\
+    $$WE\_blh\_layer\_max$$ & -0.1392 & 0.0170 \\
+    $$WE\_blh\_layer\_min$$ & -0.1847 & 0.0201 \\
+    $$WE\_tot\_precipitation$$ & -0.1390 & 0.0152 \\
+    $$WE\_precipitation\_t$$  & -0.1561 & 0.0168 \\
+    \hline
+    \end{tabular}
+    \caption{Coefficients and Standard Deviations}
+    \end{table}
+
+    \subsection{Ridge regression for selecting the parameters}
+
+    \begin{table}[htbp]
+    \centering
+    \label{tab:coefficients}
+    \begin{tabular}{lll}
+    \hline
+    \textbf{Variable} & \textbf{Coefficient} & \textbf{Standard Deviation} \\
+    \hline
+    EM\_nh3\_agr\_waste\_burn & 0.21919735 & 0.00271501 \\
+    EM\_nox\_traffic & 0.03017421 & 0.00271501 \\
+    EM\_nox\_sum & -0.01054050 & 0.00271501 \\
+    EM\_so2\_sum & -0.04191821 & 0.00271501 \\
+    WE\_temp\_2m & 0.03133711 & 0.00271501 \\
+    WE\_wind\_speed\_10m\_mean & 0.13995483 & 0.00271501 \\
+    WE\_blh\_layer\_max & -0.14173566 & 0.00271501 \\
+    WE\_blh\_layer\_min & -0.12792561 & 0.00271501 \\
+    WE\_tot\_precipitation & -0.18176794 & 0.00271501 \\
+    WE\_precipitation\_t & -0.13615075 & 0.00271501 \\
+    Intercept &  -0.15353022 &  0.00271501 \\
+    \hline
+    \end{tabular}
+    \caption{Coefficients and Standard Deviations}
+    \label{table:kysymys}
+    \end{table}
+
+ The table \ref{table:kysymys} presents the estimated coefficients and associated standard deviations for each variable in the model. 
+ Note that the standard deviation is the same for all variables, indicating that all coefficients were computed with the same precision. 
+ This may be due to factors such as the nature of the data or the model configuration.
+\section{Model with interactions}
+    \subsection{Introduction}
+    Accurate modeling of complex phenomena often requires consideration of interactions among involved variables. While many traditional models focus on the linearity of relationships, many real-world situations involve non-linear and intricate interactions that elude such approaches. In our work, we propose a model that tackles this challenge by explicitly incorporating interactions between variables, allowing for a more faithful representation of the underlying complexity. This approach is particularly relevant in fields such as biological data analysis, financial forecasting, and understanding climate models, where non-linear relationships are frequent and meaningful.
+
+    The next section provides an overview of the methodologies used in our model, highlighting key techniques that enable the capture of complex interactions. Subsequently, we present the results of our experiments, comparing the performance of our model with that of traditional approaches. We conclude with a discussion of the advantages and potential applications of our model, emphasizing the importance of considering interactions for more accurate and informative modeling.
+
+    \subsection{Formulation of the problem}
+
+    The formulation of the model is present in the equation \ref{eq:seasonal_model}.
+    \\The considered time period \cite{lockdown} for the covid is from 2020-03-09 to 2020-05-03 because it was the red zone period in Lombardy, instead, regarding the season:
     \begin{itemize}
-        \item Best MAE: 0.061
-        \item Best R-squared (R2): 0.59
-        \item Best RMSE: 0.082
+        \item Spring: from March 19 to June 19
+        \item Summer: from June 20 to September 21
+        \item Autumn: from September 22 to December 20
+        \item Winter: from December 21 to March 18
     \end{itemize}
 
-Best Hyperparameters for the Best Model:
-
-    \begin{itemize}
-        \item Number of Epochs: 300
-        \item Number of Iterations: 10
-        \item Units Hidden Layer: 128
-        \item Learning Rate: 0.001,
-        \item Training Time for Best Model:  67.73 seconds
-    \end{itemize}
-
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.4]{Assets/iteration 1/lstm_it1_1.png}
-        \caption{Time series for the LSTM result for the first iteration}
-        \label{fig:enter-label}
-    \end{figure}
-
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.4]{Assets/iteration 1/lstm_it1_2.png}
-        \caption{$\hat{y}$ vs. y\_real for LSTM for the second iteration}
-        \label{fig:enter-label}
-    \end{figure}
-    \newpage
-
-    \subsection{Results for the second iteration}
-
-    The new starting parameters for the model are:
-    \begin{itemize}
-        \item  units\_hidden\_layer = [64, 128, 192, 256]
-        \item learning\_rates = [0.001, 0.01, 0.1]
-        \item num\_iterations\_range = [0, 5, 10, 20]
-        \item num\_epochs\_range = [200, 250, 300, 350, 400]
-    \end{itemize}
+    Regarding the Meteo variables are the ones who have the WE label in the AgrImOnIA dataset ($WE\_temp\_2m$, $WE\_wind\_speed\_10m\_mean$, $WE\_wind\_speed\_10m\_max$, $WE\_tot\_precipitation$, $WE\_precipitation\_t$,
+    $WE\_surface\_pressure$, $WE\_solar\_radiation$, $WE\_rh\_min$, $WE\_rh\_mean$, $WE\_rh\_max$, $WE\_wind\_speed\_100m\_mean$, $WE\_wind\_speed\_100m\_max$, $WE\_blh\_layer\_max$, $WE\_blh\_layer\_min$).
     
-    Best Model Metrics training:
-        \begin{itemize}
-            \item Best MAE: 0.06
-            \item Best R-squared (R2): 0.6
-            \item Best RMSE: 0.08
-        \end{itemize}
+    \begin{equation}
+        AQ\_NH_3 \sim Meteo * Season * isCovidPeriod 
+        \label{eq:seasonal_model} 
+    \end{equation}
+ \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.45]{Assets/Interaction1_result.png}
+            \caption{Scatterplot previsions vs reals values for model with interactions}
+            \label{fig:enter-label}
+        \end{figure}
     
-    Best Model Metrics:
+    \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.45]{Assets/Interaction_result2.png}
+            \caption{Residual distribution for model with interactions}
+            \label{fig:enter-label}
+        \end{figure}
     
-        \begin{itemize}
-            \item Best MAE: 0.06
-            \item Best R-squared (R2): 0.6
-            \item Best RMSE: 0.08
-            \item Training Time for Best Model:  70.73 seconds
-        \end{itemize}
-    The LSTM model has been trained and evaluated with a range of hyperparameters, including varying units in the hidden layer, learning rates, number of iterations, and epochs.
-    \\The training phase resulted in the best model achieving a remarkably low Mean Absolute Error (MAE) of 0.06, a high R-squared (R2) value of 0.6, and a small Root Mean Squared Error (RMSE) of 0.08.
-    \\These metrics indicate that the LSTM architecture effectively captures the temporal dependencies in the data and exhibits strong predictive capabilities.
-    \\The chosen hyperparameters for the best model include 250 epochs, no iterations, 256 units in the hidden layer, and a learning rate of 0.001.
-    \\The training time for the best model is relatively higher compared to other models, at 70.73 seconds, likely due to the LSTM's inherent complexity and longer training duration.
-    \\Overall, these results demonstrate the effectiveness of LSTM in modeling sequential data and its potential for achieving high predictive accuracy.
+    The analysis of results included the application of LASSO regression to select the most significant variables in predicting the concentration of ammonia in the air during the lockdown period. LASSO regression has proven to be an effective tool in reducing the complexity of the model, selecting only the most informative variables, and reducing the risk of overfitting.
     
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.4]{Assets/iteration 2/lstm_it2_1.png}
-        \caption{Time series for the LSTM result for the second iteration}
-        \label{fig:enter-label}
-    \end{figure}
+    The coefficients obtained from the LASSO regression model provide valuable insights into the meteorological and seasonal variables that significantly influence ammonia concentration. This approach has allowed for the identification of the most relevant variables, providing greater interpretability of the model and facilitating its practical application.
+    
+    The summary of the LASSO regression model provides detailed information on the selected variables and their associated coefficients, enabling a clear understanding of the factors affecting ammonia concentration in the air during the lockdown.
+    
+    Overall, the analysis with LASSO regression enriches the understanding of the phenomenon under study, offering a clearer perspective on the relationships between meteorological variables, seasonal periods, lockdown, and ammonia concentration, and providing a solid foundation for further environmental investigations and decisions.
+    \begin{table}[htbp]
+    \centering
+    \begin{tabular}{lrrrr}
+    \textbf{Variable} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{t value} & \textbf{Pr(\textgreater|t|)} \\ \hline
+    (Intercept) & -2.02757 & 2.12255 & -0.955 & 0.339763 \\
+    Spring & -2.60840 & 2.09031 & -1.248 & 0.212479 \\
+    Summer & -9.75074 & 3.90812 & -2.495 & 0.012813 \\
+    Autumn & -3.40205 & 1.83167 & -1.857 & 0.063659 \\
+    Winter & NA & NA & NA & NA \\
+    During\_Lockdown & -0.12992 & 5.58390 & -0.023 & 0.981443 \\
+    WE\_temp\_2m & 3.20834 & 4.94232 & 0.649 & 0.516438 \\
+    WE\_wind\_speed\_10m\_mean & 67.90486 & 19.62648 & 3.460 & 0.000571 \\
+    WE\_wind\_speed\_10m\_max & -22.47107 & 11.03524 & -2.036 & 0.042076 \\
+    WE\_tot\_precipitation & -7.97593 & 25.36028 & -0.315 & 0.753226 \\
+    WE\_precipitation\_t & 10.65882 & 21.58726 & 0.494 & 0.621626 \\
+    WE\_surface\_pressure & 1.71028 & 2.86797 & 0.596 & 0.551132 \\
+    WE\_solar\_radiation & 5.61047 & 5.17925 & 1.083 & 0.279047 \\
+    WE\_rh\_min & 5.83510 & 5.89835 & 0.989 & 0.322851 \\
+    WE\_rh\_mean & 4.65734 & 6.12181 & 0.761 & 0.447032 \\
+    WE\_rh\_max & -2.01416 & 4.20637 & -0.479 & 0.632196 \\
+    WE\_wind\_speed\_100m\_mean & -55.66511 & 18.25622 & -3.049 & 0.002377 \\
+    WE\_wind\_speed\_100m\_max & 7.45014 & 8.76350 & 0.850 & 0.395526 \\
+    WE\_blh\_layer\_max & -0.70094 & 5.58484 & -0.126 & 0.900156 \\
+    WE\_blh\_layer\_min & 2.85963 & 15.40196 & 0.186 & 0.852757 \\ \hline
+    \end{tabular}
+    \caption{Regression coefficients with standard errors, t-values, and p-values.}
+    \label{tab:regression}
+    \end{table}
 
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.4]{Assets/iteration 2/lstm_it2_2.png}
-        \caption{$\hat{y}$ vs. y\_real the LSTM model for the second iteration}
-        \label{fig:enter-label}
-    \end{figure}
+    \subsection{Analysis of Results with Ridge Regression}
 
-    \newpage
+    \subsubsection{Analysis of the autocorrelation function of the residuals}
+    The autocorrelation coefficients of the residuals indicate the correlation between the model residuals at different time lags. The first coefficient, representing the correlation of the residuals with themselves at lag zero, is naturally 1 as it signifies the correlation of the residuals with themselves without any lag. The subsequent coefficients reflect the correlation of the residuals with their past values, starting from the second lag. In this case, the coefficients tend to decrease as the time lag increases, indicating a decrease in the correlation between the residuals. However, some coefficients show significant values, suggesting the presence of residual correlation at specific time lags. For instance, the more significant coefficients might indicate the presence of periodic patterns not captured by the model or the need to explore further temporal structures in the data. Thus, the analysis of residual autocorrelation can provide valuable insights into the model validity and the presence of any unaccounted temporal structures.
+
 
 \bibliography{bibliography} 
 
